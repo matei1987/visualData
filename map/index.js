@@ -3,8 +3,8 @@ function init() {
   clock = new THREE.Clock();
   
   $container = $('#container');
-  var width = window.innerWidth * 0.99;
-  var height = window.innerHeight * 0.99;
+  var width = window.innerWidth;
+  var height = window.innerHeight;
   renderer = new THREE.WebGLRenderer({antialias: true});
   renderer.setSize(width, height);
   $container.append(renderer.domElement);
@@ -23,7 +23,8 @@ function init() {
   scene.add(camera);
   
   var parent = new THREE.Object3D();
-  parent.position.y = 50;
+  parent.position.y = 0;
+  parent.position.x = 0;
   scene.add( parent );
  
   var colorArray = [10571751.13940574, 3173614.0569316, 9563453.703411205, 13566412.191378772, 3205732.246423457, 510009.23913232866, 5553613.829135051, 9853254.740825217, 4491309.27526584, 11631465.65436683, 14945459.609181136, 8099660.212535102, 14592825.958324742, 9283951.76694582, 2923730.6421383135, 11666026.488244344, 1067065.034054214, 2057363.4906528227, 12416542.963041324, 2390840.056713569, 13317874.108536547, 13024219.977602199, 9886527.488842007, 8380292.230964378, 2406184.8057989506, 5314210.120748375, 3310143.044887588, 14470882.992936859, 7965356.12679025, 11550910.70213703, 422745.1466774242, 3047906.9316118294, 10708356.45548218, 11858674.148636648, 14571121.93227465, 7942466.29612334, 4917391.163931879, 16323339.679396829, 3528461.106093567, 767573.5167490505, 8130699.398185022, 12086219.138980158, 11746055.338943003, 16774037.89472062, 9088119.919243308, 5511252.984003704, 15653468.727136752, 11367309.865424244, 13724763.025690326, 14044767.268335337, 13830761.956872297];
@@ -79,9 +80,10 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s ) {
   var mesh = new THREE.Mesh( eGeom, material );
  eGeom.computeBoundingBox();
 // THREE.GeometryUtils.center(eGeom);
-  mesh.position.set( x-400, y+200, z );
-  mesh.rotation.set( rx, ry, rz );
   s = 1 ;
+  mesh.position.set( x-window.innerWidth/(s*4), y+window.innerHeight/(s*4), z );
+  mesh.rotation.set( rx, ry, rz );
+
   mesh.scale.set( s, s, s );
 
 var scale = new THREE.Vector3(1,2,1); 
