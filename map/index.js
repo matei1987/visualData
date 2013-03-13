@@ -17,7 +17,7 @@ function init() {
     0.01,           // Near plane
     10000           // Far plane
   );
-  camera.position.set(500, 000, 2000);
+  camera.position.set(0, 0, 3000);
   camera.lookAt(scene.position);
   
   scene.add(camera);
@@ -80,8 +80,8 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s ) {
   var mesh = new THREE.Mesh( eGeom, material );
  eGeom.computeBoundingBox();
 // THREE.GeometryUtils.center(eGeom);
-  s = 1 ;
-  mesh.position.set( x-window.innerWidth/(s*4), y+window.innerHeight/(s*4), z );
+  s = 2;
+  mesh.position.set( x-window.innerWidth/(2), y+window.innerHeight/(2), z );
   mesh.rotation.set( rx, ry, rz );
 
   mesh.scale.set( s, s, s );
@@ -169,13 +169,13 @@ function transformSVGPath(pathStr) {
         path.moveTo(x, y);
         activeCmd = 'l';
         break;
-      case 'Z':
+       case 'Z':
       case 'z':
         canRepeat = false;
         if (x !== firstX || y !== firstY)
           path.lineTo(firstX, firstY);
         break;
-        // - lines!
+         lines!
       case 'L':
       case 'H':
       case 'V':
@@ -305,7 +305,7 @@ function transformSVGPath(pathStr) {
         y = ny;
         break;
       default:
-        throw new Error("weird path command: " + activeCmd);
+        //throw new Error("weird path command: " + activeCmd);
     }
     if (firstX === null) {
       firstX = x;
@@ -341,3 +341,46 @@ $(function() {
 
 });
 
+
+// // var pointList = []; 
+
+// // for (var i in statePaths.paths){
+// //   pointList.push(statePaths.paths[i].split("L"));
+// // }
+
+
+// // var string = 'F0123456'; // just an example
+// // string.replace(/^F0+/i, ''); 
+
+// // for(var i = 0; i<pointList.length; i++){
+// //   for (var j =0; j<pointList[i].length; j++){
+// //     pointList[i][j] = pointList[i][j].replace(/^[M]+/i, '');
+// //     pointList[i][j] = pointList[i][j].replace(/[z]+$/i, '');
+// //     for (var k = 0; k<pointList[i].length; k++){
+// //       if (pointList[i][k] == pointList[i][j]){ //check if 
+
+// //         console.log(pointList[i][k], pointList[i][j]);
+// //       }
+// //     }
+
+
+// //   }
+// // }
+
+
+// var COPYstatePaths = statePaths;
+
+// for(var i in COPYstatePaths.paths){
+//   COPYstatePaths.paths[i] = COPYstatePaths.paths[i].split('L');
+//   for (var j in COPYstatePaths.paths[i]){
+//     COPYstatePaths.paths[i][j] = COPYstatePaths.paths[i][j].replace(/^[M]+/i, '');
+//     COPYstatePaths.paths[i][j] = COPYstatePaths.paths[i][j].replace(/[z]+$/i, '');
+//   }
+// }
+
+
+
+
+
+
+// console.log(COPYstatePaths);
