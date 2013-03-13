@@ -45,7 +45,7 @@ function init() {
   scene.add(light);
   
   controls = new THREE.TrackballControls(camera);
-  controls.movementSpeed = 100;
+  controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;;
   controls.autoForward = false;
   controls.dragToLook = true;
@@ -175,7 +175,7 @@ function transformSVGPath(pathStr) {
         if (x !== firstX || y !== firstY)
           path.lineTo(firstX, firstY);
         break;
-         lines!
+        // - lines!
       case 'L':
       case 'H':
       case 'V':
