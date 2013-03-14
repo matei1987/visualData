@@ -322,16 +322,15 @@ function transformSVGPath(pathStr) {
 
 $(document).ready(function() {
 
-    var renderer;
-    var controls;
-    var scene;
-    var camera;
-    var $container;
-    var clock;
+    var renderer,
+      controls,
+      scene,
+      camera,
+      $container,
+      clock;
 
-    var xx=0;
-    var yy=0;
-    var zz=0;
+    var xx, yy, zz =0;
+    
     init();
     animate();
 
