@@ -320,11 +320,7 @@ function transformSVGPath(pathStr) {
   return path;
 }
 
-
-
-
-
-$(function() {
+$(document).ready(function() {
 
     var renderer;
     var controls;
