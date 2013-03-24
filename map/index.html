@@ -1,11 +1,7 @@
 <style>
   #container {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
-  z-index: 0;
 }
 
 </style>
@@ -20,7 +16,15 @@
 	<script type="text/javascript" src="index.js"></script>
 </head>
  <body>
- 	<div id="filter-bar"></div>
- 	<div id="container"></div>   
+ 	<div id="filter"></div>
+    <select name="filter-bar" id="filter-bar">
+      <option value="education">Education</option>
+      <option value="pension">Pension</option>
+      <option value="health-care">Health Care</option>
+    </select>
+    <a href="#" id="education">Education</a>
+    <a href="#" id="education">Pension</a>
+    <a href="#" id="education">Pension</a>
+ 	<div id="container" id="education"></div>   
 </body>
 </html>

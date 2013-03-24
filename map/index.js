@@ -58,10 +58,12 @@ function init() {
   controls.dragToLook = true;
   
 function onMouseMove (e){
+  var position = $('canvas').position(),
+  offsetY = position.top,
+  offsetX = position.left;
 
-
-  mouseVector.x = 2 * (e.clientX / containerWidth) - 1;
-    mouseVector.y = 1 - 2 * ( e.clientY / containerHeight );
+  mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1;
+    mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
     for (var i in states.children){
       var state = states.children[i];
