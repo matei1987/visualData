@@ -1,1 +1,314 @@
-["State","State Spending","","Local Spending","","State and Local Spending",""," \r\n\"Alabama\"","2.7","g","0.1","g","2.8","g\r\n\"Alaska\"","1.0","g","0.0","g","1.0","g\r\n\"Arizona\"","2.9","g","0.2","g","3.1","g\r\n\"Arkansas\"","1.3","g","0.0","g","1.3","g\r\n\"California\"","27.4","g","10.3","g","37.7","g\r\n\"Colorado\"","3.9","g","0.5","g","4.4","g\r\n\"Connecticut\"","3.0","g","0.5","g","3.5","g\r\n\"Delaware\"","0.5","g","0.1","g","0.5","g\r\n\"District of Columbia\"","0.0","g","0.2","g","0.2","g\r\n\"Florida\"","7.0","g","1.7","g","8.7","g\r\n\"Georgia\"","4.7","g","0.5","g","5.2","g\r\n\"Hawaii\"","1.0","g","0.0","g","1.0","g\r\n\"Idaho\"","0.6","g","0.0","g","0.6","g\r\n\"Illinois\"","9.3","g","4.5","g","13.9","g\r\n\"Indiana\"","2.2","g","0.1","g","2.3","g\r\n\"Iowa\"","1.8","g","0.0","g","1.8","g\r\n\"Kansas\"","1.4","g","0.1","g","1.4","g\r\n\"Kentucky\"","3.2","g","0.1","g","3.3","g\r\n\"Louisiana\"","3.7","g","0.2","g","3.9","g\r\n\"Maine\"","0.7","g","0.0","g","0.7","g\r\n\"Maryland\"","2.8","g","1.0","g","3.7","g\r\n\"Massachusetts\"","4.1","g","1.7","g","5.8","g\r\n\"Michigan\"","6.1","g","1.8","g","7.9","g\r\n\"Minnesota\"","3.7","g","0.4","g","4.1","g\r\n\"Mississippi\"","2.0","g","0.0","g","2.0","g\r\n\"Missouri\"","3.3","g","0.5","g","3.9","g\r\n\"Montana\"","0.6","g","0.0","g","0.6","g\r\n\"Nebraska\"","0.5","g","0.3","g","0.7","g\r\n\"Nevada\"","1.4","g","0.0","g","1.4","g\r\n\"New Hampshire\"","0.6","g","0.0","g","0.6","g\r\n\"New Jersey\"","8.8","g","0.0","g","8.8","g\r\n\"New Mexico\"","1.6","g","0.0","g","1.6","g\r\n\"New York\"","15.1","g","12.0","g","27.1","g\r\n\"North Carolina\"","4.8","g","0.0","g","4.8","g\r\n\"North Dakota\"","0.3","g","0.0","g","0.3","g\r\n\"Ohio\"","12.1","g","0.2","g","12.3","g\r\n\"Oklahoma\"","2.0","g","0.1","g","2.1","g\r\n\"Oregon\"","3.7","g","0.1","g","3.8","g\r\n\"Pennsylvania\"","9.0","g","2.2","g","11.1","g\r\n\"Rhode Island\"","0.8","g","0.2","g","1.0","g\r\n\"South Carolina\"","2.6","g","0.0","g","2.6","g\r\n\"South Dakota\"","0.4","g","0.0","g","0.4","g\r\n\"Tennessee\"","1.8","g","0.6","g","2.4","g\r\n\"Texas\"","12.3","g","1.7","g","13.9","g\r\n\"All states combined\"","190.8","g","43.5","g","234.3","g\r\n\"Utah\"","1.1","g","0.0","g","1.1","g\r\n\"Vermont\"","0.2","g","0.0","g","0.2","g\r\n\"Virginia\"","3.4","g","0.8","g","4.3","g\r\n\"Washington\"","3.1","g","0.2","g","3.4","g\r\n\"West Virginia\"","0.9","g","0.0","g","1.0","g\r\n\"Wisconsin\"","4.1","g","0.4","g","4.5","g\r\n\"Wyoming\"","0.4","g","0.0","g","0.4","g"]
+[
+  {
+    "State": "Alabama",
+    "State Spending": "2.7",
+    "Local Spending": "0.1",
+    "State and Local Spending": "2.8"
+  },
+  {
+    "State": "Alaska",
+    "State Spending": "1.0",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.0"
+  },
+  {
+    "State": "Arizona",
+    "State Spending": "2.9",
+    "Local Spending": "0.2",
+    "State and Local Spending": "3.1"
+  },
+  {
+    "State": "Arkansas",
+    "State Spending": "1.3",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.3"
+  },
+  {
+    "State": "California",
+    "State Spending": "27.4",
+    "Local Spending": "10.3",
+    "State and Local Spending": "37.7"
+  },
+  {
+    "State": "Colorado",
+    "State Spending": "3.9",
+    "Local Spending": "0.5",
+    "State and Local Spending": "4.4"
+  },
+  {
+    "State": "Connecticut",
+    "State Spending": "3.0",
+    "Local Spending": "0.5",
+    "State and Local Spending": "3.5"
+  },
+  {
+    "State": "Delaware",
+    "State Spending": "0.5",
+    "Local Spending": "0.1",
+    "State and Local Spending": "0.5"
+  },
+  {
+    "State": "District of Columbia",
+    "State Spending": "0.0",
+    "Local Spending": "0.2",
+    "State and Local Spending": "0.2"
+  },
+  {
+    "State": "Florida",
+    "State Spending": "7.0",
+    "Local Spending": "1.7",
+    "State and Local Spending": "8.7"
+  },
+  {
+    "State": "Georgia",
+    "State Spending": "4.7",
+    "Local Spending": "0.5",
+    "State and Local Spending": "5.2"
+  },
+  {
+    "State": "Hawaii",
+    "State Spending": "1.0",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.0"
+  },
+  {
+    "State": "Idaho",
+    "State Spending": "0.6",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.6"
+  },
+  {
+    "State": "Illinois",
+    "State Spending": "9.3",
+    "Local Spending": "4.5",
+    "State and Local Spending": "13.9"
+  },
+  {
+    "State": "Indiana",
+    "State Spending": "2.2",
+    "Local Spending": "0.1",
+    "State and Local Spending": "2.3"
+  },
+  {
+    "State": "Iowa",
+    "State Spending": "1.8",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.8"
+  },
+  {
+    "State": "Kansas",
+    "State Spending": "1.4",
+    "Local Spending": "0.1",
+    "State and Local Spending": "1.4"
+  },
+  {
+    "State": "Kentucky",
+    "State Spending": "3.2",
+    "Local Spending": "0.1",
+    "State and Local Spending": "3.3"
+  },
+  {
+    "State": "Louisiana",
+    "State Spending": "3.7",
+    "Local Spending": "0.2",
+    "State and Local Spending": "3.9"
+  },
+  {
+    "State": "Maine",
+    "State Spending": "0.7",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.7"
+  },
+  {
+    "State": "Maryland",
+    "State Spending": "2.8",
+    "Local Spending": "1.0",
+    "State and Local Spending": "3.7"
+  },
+  {
+    "State": "Massachusetts",
+    "State Spending": "4.1",
+    "Local Spending": "1.7",
+    "State and Local Spending": "5.8"
+  },
+  {
+    "State": "Michigan",
+    "State Spending": "6.1",
+    "Local Spending": "1.8",
+    "State and Local Spending": "7.9"
+  },
+  {
+    "State": "Minnesota",
+    "State Spending": "3.7",
+    "Local Spending": "0.4",
+    "State and Local Spending": "4.1"
+  },
+  {
+    "State": "Mississippi",
+    "State Spending": "2.0",
+    "Local Spending": "0.0",
+    "State and Local Spending": "2.0"
+  },
+  {
+    "State": "Missouri",
+    "State Spending": "3.3",
+    "Local Spending": "0.5",
+    "State and Local Spending": "3.9"
+  },
+  {
+    "State": "Montana",
+    "State Spending": "0.6",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.6"
+  },
+  {
+    "State": "Nebraska",
+    "State Spending": "0.5",
+    "Local Spending": "0.3",
+    "State and Local Spending": "0.7"
+  },
+  {
+    "State": "Nevada",
+    "State Spending": "1.4",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.4"
+  },
+  {
+    "State": "New Hampshire",
+    "State Spending": "0.6",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.6"
+  },
+  {
+    "State": "New Jersey",
+    "State Spending": "8.8",
+    "Local Spending": "0.0",
+    "State and Local Spending": "8.8"
+  },
+  {
+    "State": "New Mexico",
+    "State Spending": "1.6",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.6"
+  },
+  {
+    "State": "New York",
+    "State Spending": "15.1",
+    "Local Spending": "12.0",
+    "State and Local Spending": "27.1"
+  },
+  {
+    "State": "North Carolina",
+    "State Spending": "4.8",
+    "Local Spending": "0.0",
+    "State and Local Spending": "4.8"
+  },
+  {
+    "State": "North Dakota",
+    "State Spending": "0.3",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.3"
+  },
+  {
+    "State": "Ohio",
+    "State Spending": "12.1",
+    "Local Spending": "0.2",
+    "State and Local Spending": "12.3"
+  },
+  {
+    "State": "Oklahoma",
+    "State Spending": "2.0",
+    "Local Spending": "0.1",
+    "State and Local Spending": "2.1"
+  },
+  {
+    "State": "Oregon",
+    "State Spending": "3.7",
+    "Local Spending": "0.1",
+    "State and Local Spending": "3.8"
+  },
+  {
+    "State": "Pennsylvania",
+    "State Spending": "9.0",
+    "Local Spending": "2.2",
+    "State and Local Spending": "11.1"
+  },
+  {
+    "State": "Rhode Island",
+    "State Spending": "0.8",
+    "Local Spending": "0.2",
+    "State and Local Spending": "1.0"
+  },
+  {
+    "State": "South Carolina",
+    "State Spending": "2.6",
+    "Local Spending": "0.0",
+    "State and Local Spending": "2.6"
+  },
+  {
+    "State": "South Dakota",
+    "State Spending": "0.4",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.4"
+  },
+  {
+    "State": "Tennessee",
+    "State Spending": "1.8",
+    "Local Spending": "0.6",
+    "State and Local Spending": "2.4"
+  },
+  {
+    "State": "Texas",
+    "State Spending": "12.3",
+    "Local Spending": "1.7",
+    "State and Local Spending": "13.9"
+  },
+  {
+    "State": "All states combined",
+    "State Spending": "190.8",
+    "Local Spending": "43.5",
+    "State and Local Spending": "234.3"
+  },
+  {
+    "State": "Utah",
+    "State Spending": "1.1",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.1"
+  },
+  {
+    "State": "Vermont",
+    "State Spending": "0.2",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.2"
+  },
+  {
+    "State": "Virginia",
+    "State Spending": "3.4",
+    "Local Spending": "0.8",
+    "State and Local Spending": "4.3"
+  },
+  {
+    "State": "Washington",
+    "State Spending": "3.1",
+    "Local Spending": "0.2",
+    "State and Local Spending": "3.4"
+  },
+  {
+    "State": "West Virginia",
+    "State Spending": "0.9",
+    "Local Spending": "0.0",
+    "State and Local Spending": "1.0"
+  },
+  {
+    "State": "Wisconsin",
+    "State Spending": "4.1",
+    "Local Spending": "0.4",
+    "State and Local Spending": "4.5"
+  },
+  {
+    "State": "Wyoming",
+    "State Spending": "0.4",
+    "Local Spending": "0.0",
+    "State and Local Spending": "0.4"
+  }
+]
