@@ -1,4 +1,4 @@
-[
+var healthcare = [
   {
     "State": "Alabama",
     "State Spending": "6.4",
@@ -311,4 +311,4 @@
     "Local Spending": "0.7",
     "State and Local Spending": "1.5"
   }
-]
+];

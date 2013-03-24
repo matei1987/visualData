@@ -1,4 +1,4 @@
-[
+var pensions = [
   {
     "State": "Alabama",
     "State Spending": "2.7",
@@ -311,4 +311,4 @@
     "Local Spending": "0.0",
     "State and Local Spending": "0.4"
   }
-]
+];

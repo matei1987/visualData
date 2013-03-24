@@ -1,4 +1,4 @@
-var education = [
+[
   {
     "State": "Alabama",
     "State Spending": "6.0",
@@ -311,4 +311,4 @@ var education = [
     "Local Spending": "2.0",
     "State and Local Spending": "2.7"
   }
-];
+]
