@@ -1,314 +1,262 @@
-var healthcare = [
-  {
-    "State": "Alabama",
+var healthcare = {
+    "Alabama": {
     "State Spending": "6.4",
     "Local Spending": "3.4",
     "State and Local Spending": "9.8"
   },
-  {
-    "State": "Alaska",
+    "Alaska": {
     "State Spending": "1.7",
     "Local Spending": "0.5",
     "State and Local Spending": "2.2"
   },
-  {
-    "State": "Arizona",
+    "Arizona": {
     "State Spending": "9.3",
     "Local Spending": "1.0",
     "State and Local Spending": "10.3"
   },
-  {
-    "State": "Arkansas",
+    "Arkansas": {
     "State Spending": "5.2",
     "Local Spending": "0.2",
     "State and Local Spending": "5.5"
   },
-  {
-    "State": "California",
+    "California": {
     "State Spending": "68.4",
     "Local Spending": "24.8",
     "State and Local Spending": "93.2"
   },
-  {
-    "State": "Colorado",
+    "Colorado": {
     "State Spending": "5.8",
     "Local Spending": "2.4",
     "State and Local Spending": "8.2"
   },
-  {
-    "State": "Connecticut",
+    "Connecticut": {
     "State Spending": "7.3",
     "Local Spending": "0.1",
     "State and Local Spending": "7.4"
   },
-  {
-    "State": "Delaware",
+    "Delaware": {
     "State Spending": "1.9",
     "Local Spending": "0.0",
     "State and Local Spending": "1.9"
   },
-  {
-    "State": "District of Columbia",
+    "District of Columbia": {
     "State Spending": "0.0",
     "Local Spending": "2.6",
     "State and Local Spending": "2.6"
   },
-  {
-    "State": "Florida",
+    "Florida": {
     "State Spending": "24.7",
     "Local Spending": "9.4",
     "State and Local Spending": "34.2"
   },
-  {
-    "State": "Georgia",
+    "Georgia": {
     "State Spending": "11.0",
     "Local Spending": "5.5",
     "State and Local Spending": "16.5"
   },
-  {
-    "State": "Hawaii",
+    "Hawaii": {
     "State Spending": "2.9",
     "Local Spending": "0.1",
     "State and Local Spending": "2.9"
   },
-  {
-    "State": "Idaho",
+    "Idaho": {
     "State Spending": "2.3",
     "Local Spending": "0.7",
     "State and Local Spending": "3.0"
   },
-  {
-    "State": "Illinois",
+    "Illinois": {
     "State Spending": "15.7",
     "Local Spending": "2.2",
     "State and Local Spending": "17.8"
   },
-  {
-    "State": "Indiana",
+    "Indiana": {
     "State Spending": "7.7",
     "Local Spending": "3.6",
     "State and Local Spending": "11.3"
   },
-  {
-    "State": "Iowa",
+    "Iowa": {
     "State Spending": "5.5",
     "Local Spending": "1.8",
     "State and Local Spending": "7.4"
   },
-  {
-    "State": "Kansas",
+    "Kansas": {
     "State Spending": "4.5",
     "Local Spending": "1.4",
     "State and Local Spending": "5.9"
   },
-  {
-    "State": "Kentucky",
+    "Kentucky": {
     "State Spending": "7.7",
     "Local Spending": "0.8",
     "State and Local Spending": "8.5"
   },
-  {
-    "State": "Louisiana",
+    "Louisiana": {
     "State Spending": "8.3",
     "Local Spending": "2.5",
     "State and Local Spending": "10.8"
   },
-  {
-    "State": "Maine",
+    "Maine": {
     "State Spending": "2.7",
     "Local Spending": "0.1",
     "State and Local Spending": "2.8"
   },
-  {
-    "State": "Maryland",
+    "Maryland": {
     "State Spending": "8.8",
     "Local Spending": "0.4",
     "State and Local Spending": "9.2"
   },
-  {
-    "State": "Massachusetts",
+    "Massachusetts": {
     "State Spending": "14.5",
     "Local Spending": "1.4",
     "State and Local Spending": "16.0"
   },
-  {
-    "State": "Michigan",
+    "Michigan": {
     "State Spending": "13.0",
     "Local Spending": "4.1",
     "State and Local Spending": "17.1"
   },
-  {
-    "State": "Minnesota",
+    "Minnesota": {
     "State Spending": "9.6",
     "Local Spending": "2.8",
     "State and Local Spending": "12.4"
   },
-  {
-    "State": "Mississippi",
+    "Mississippi": {
     "State Spending": "6.2",
     "Local Spending": "2.2",
     "State and Local Spending": "8.4"
   },
-  {
-    "State": "Missouri",
+    "Missouri": {
     "State Spending": "10.0",
     "Local Spending": "1.8",
     "State and Local Spending": "11.8"
   },
-  {
-    "State": "Montana",
+    "Montana": {
     "State Spending": "1.2",
     "Local Spending": "0.2",
     "State and Local Spending": "1.4"
   },
-  {
-    "State": "Nebraska",
+    "Nebraska": {
     "State Spending": "1.9",
     "Local Spending": "0.7",
     "State and Local Spending": "2.6"
   },
-  {
-    "State": "Nevada",
+    "Nevada": {
     "State Spending": "2.2",
     "Local Spending": "0.9",
     "State and Local Spending": "3.1"
   },
-  {
-    "State": "New Hampshire",
+    "New Hampshire": {
     "State Spending": "1.5",
     "Local Spending": "0.0",
     "State and Local Spending": "1.5"
   },
-  {
-    "State": "New Jersey",
+    "New Jersey": {
     "State Spending": "13.4",
     "Local Spending": "0.8",
     "State and Local Spending": "14.2"
   },
-  {
-    "State": "New Mexico",
+    "New Mexico": {
     "State Spending": "4.8",
     "Local Spending": "0.2",
     "State and Local Spending": "5.0"
   },
-  {
-    "State": "New York",
+    "New York": {
     "State Spending": "48.4",
     "Local Spending": "12.8",
     "State and Local Spending": "61.1"
   },
-  {
-    "State": "North Carolina",
+    "North Carolina": {
     "State Spending": "12.8",
     "Local Spending": "6.8",
     "State and Local Spending": "19.6"
   },
-  {
-    "State": "North Dakota",
+    "North Dakota": {
     "State Spending": "0.9",
     "Local Spending": "0.0",
     "State and Local Spending": "1.0"
   },
-  {
-    "State": "Ohio",
+    "Ohio": {
     "State Spending": "20.4",
     "Local Spending": "3.9",
     "State and Local Spending": "24.3"
   },
-  {
-    "State": "Oklahoma",
+    "Oklahoma": {
     "State Spending": "5.7",
     "Local Spending": "1.4",
     "State and Local Spending": "7.1"
   },
-  {
-    "State": "Oregon",
+    "Oregon": {
     "State Spending": "6.4",
     "Local Spending": "1.0",
     "State and Local Spending": "7.4"
   },
-  {
-    "State": "Pennsylvania",
+    "Pennsylvania": {
     "State Spending": "24.9",
     "Local Spending": "5.1",
     "State and Local Spending": "30.0"
   },
-  {
-    "State": "Rhode Island",
+    "Rhode Island": {
     "State Spending": "2.2",
     "Local Spending": "0.0",
     "State and Local Spending": "2.2"
   },
-  {
-    "State": "South Carolina",
+    "South Carolina": {
     "State Spending": "8.6",
     "Local Spending": "3.5",
     "State and Local Spending": "12.1"
   },
-  {
-    "State": "South Dakota",
+    "South Dakota": {
     "State Spending": "0.8",
     "Local Spending": "0.1",
     "State and Local Spending": "0.9"
   },
-  {
-    "State": "Tennessee",
+    "Tennessee": {
     "State Spending": "10.1",
     "Local Spending": "2.5",
     "State and Local Spending": "12.7"
   },
-  {
-    "State": "Texas",
+    "Texas": {
     "State Spending": "34.1",
     "Local Spending": "10.5",
     "State and Local Spending": "44.6"
   },
-  {
-    "State": "All states combined",
+    "All states combined": {
     "State Spending": "498.3",
     "Local Spending": "134.0",
     "State and Local Spending": "632.3"
   },
-  {
-    "State": "Utah",
+    "Utah": {
     "State Spending": "3.4",
     "Local Spending": "0.2",
     "State and Local Spending": "3.7"
   },
-  {
-    "State": "Vermont",
+    "Vermont": {
     "State Spending": "1.3",
     "Local Spending": "0.0",
     "State and Local Spending": "1.3"
   },
-  {
-    "State": "Virginia",
+    "Virginia": {
     "State Spending": "11.6",
     "Local Spending": "1.2",
     "State and Local Spending": "12.9"
   },
-  {
-    "State": "Washington",
+    "Washington": {
     "State Spending": "10.1",
     "Local Spending": "3.5",
     "State and Local Spending": "13.6"
   },
-  {
-    "State": "West Virginia",
+    "West Virginia": {
     "State Spending": "3.4",
     "Local Spending": "0.3",
     "State and Local Spending": "3.7"
   },
-  {
-    "State": "Wisconsin",
+    "Wisconsin": {
     "State Spending": "9.0",
     "Local Spending": "1.3",
     "State and Local Spending": "10.3"
   },
-  {
-    "State": "Wyoming",
+    "Wyoming": {
     "State Spending": "0.8",
     "Local Spending": "0.7",
     "State and Local Spending": "1.5"
   }
-];
+};
