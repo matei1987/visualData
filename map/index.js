@@ -4,23 +4,26 @@
     'healthcare': healthcare
   }; 
   var colorArray = [10571751.13940574, 3173614.0569316, 9563453.703411205, 13566412.191378772, 3205732.246423457, 510009.23913232866, 5553613.829135051, 9853254.740825217, 4491309.27526584, 11631465.65436683, 14945459.609181136, 8099660.212535102, 14592825.958324742, 9283951.76694582, 2923730.6421383135, 11666026.488244344, 1067065.034054214, 2057363.4906528227, 12416542.963041324, 2390840.056713569, 13317874.108536547, 13024219.977602199, 9886527.488842007, 8380292.230964378, 2406184.8057989506, 5314210.120748375, 3310143.044887588, 14470882.992936859, 7965356.12679025, 11550910.70213703, 422745.1466774242, 3047906.9316118294, 10708356.45548218, 11858674.148636648, 14571121.93227465, 7942466.29612334, 4917391.163931879, 11321339.171336222, 3528461.106093567, 767573.5167490505, 8130699.398185022, 12086219.138980158, 11746055.338943003, 16774037.89472062, 9088119.919243308, 5511252.984003704, 15653468.727136752, 11367309.865424244, 13724763.025690326, 14044767.268335337, 13830761.956872297];
-var stateShapes = [];
+  var stateShapes = [];
 
   var states = new THREE.Object3D();
+
+/**
+ * Initialize the Visualization
+ */
 function init() {
-  
   container = document.getElementById('container');
   containerWidth = container.clientWidth,
   containerHeight = container.clientHeight;
   renderer = new THREE.WebGLRenderer({antialias: true});
   renderer.setSize(containerWidth, containerHeight);
   container.appendChild(renderer.domElement);
-  
+
   scene = new THREE.Scene();
   
   camera = new THREE.PerspectiveCamera(
     35,             // Field of view
-      containerWidth / containerHeight, // Aspect ratio
+    containerWidth / containerHeight, // Aspect ratio
     .08,           // Near plane
     100000           // Far plane
   );
@@ -34,6 +37,7 @@ function init() {
   scene.add( states );
  
   var i = 0;
+
   for (var path in statePaths.paths) {
     if (path != 'mi') {
       var shape = transformSVGPath(statePaths.paths[path]);
@@ -57,12 +61,10 @@ function init() {
   controls.rollSpeed = Math.PI / 12;;
   controls.autoForward = false;
   controls.dragToLook = true;
- 
 
-  $('a').click(function(){
+
+  $('#filter a').click(function(){
     extrudeStates($(this).attr('id'));
-
-
   });
 
 function extrudeStates(data){
@@ -379,6 +381,4 @@ $(document).ready(function() {
     
     init();
     animate();
-
-
 });
