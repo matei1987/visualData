@@ -1,3 +1,5 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+
 /* CSS Clearfix */
 .clearfix:after {
 	content: ".";
@@ -27,17 +29,22 @@ html[xmlns] .clearfix { display: block;}
 	border-top: 1px solid rgb(25, 31, 37);
 	border-bottom: 1px solid rgb(25, 31, 37);
 
-	background: #34495e;
+	background: #2C3E50;
+	font-family: "Lato", sans-serif;
 }
 
 #filter .title {
 	font-size: 20px;
-	line-height: 25px;
 	font-weight: normal;
 	float:left;
-	padding: 0 20px;
 	color: white;
 	text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+
+	border-right: 1px solid rgb(71, 48, 11);
+	background: #F39C12;
+	padding: 0 20px;
+	line-height: 58px;
+	margin: 0 20px 0 0;
 }
 
 #filter a {
@@ -49,9 +56,10 @@ html[xmlns] .clearfix { display: block;}
 
 	font-size: 16px;
 	border: none;
-	padding: 10px;
+	padding: 10px 12px;
+	text-transform: uppercase;
 	border-radius: 4px;
-	background: rgb(42, 58, 75);
+	background: #34495E;
 	margin: 10px 10px 10px 0;
 }
 
