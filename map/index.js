@@ -58,13 +58,20 @@ function init() {
 
   controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
-  controls.rollSpeed = Math.PI / 12;;
+  controls.rollSpeed = Math.PI / 12;
   controls.autoForward = false;
   controls.dragToLook = true;
 
+  // Bind to the filters
+  $('#filter a').click(function(e) {
+    e.preventDefault();
+    
+    area = $(this).data('area');
+    extrudeStates(area);
 
-  $('#filter a').click(function(){
-    extrudeStates($(this).attr('id'));
+    // Swap the active states
+    $('#filter a[data-source!="'+area+'"]').removeClass('active');
+    $(this).addClass('active');
   });
 
 function extrudeStates(data){

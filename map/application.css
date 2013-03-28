@@ -34,7 +34,7 @@
 	border-right: 1px solid transparent;
 }
 
-#filter a:hover {
+#filter a:hover, #filter a.active {
 	background: rgba(255,255,255,0.1);
 	cursor: pointer;
 	transition: .25s;
