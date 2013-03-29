@@ -38,7 +38,7 @@ camera = new THREE.PerspectiveCamera(
     .08,           // Near plane
     100000           // Far plane
   );
-  camera.position.set(0, 0, 3000);
+  camera.position.set(0, -2000, 2000);
   camera.lookAt(scene.position);
   
   scene.add(camera);
@@ -63,8 +63,8 @@ camera = new THREE.PerspectiveCamera(
   var projecter = new THREE.Projector(),
   mouseVector = new THREE.Vector3();
 
-  var containerDOM = document.getElementById('container');
-  containerDOM.addEventListener('mousemove', onMouseMove, true);
+  window.addEventListener('mousemove', onMouseMove, true);
+
   controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
@@ -173,7 +173,7 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
 
   var mesh = new THREE.Mesh( eGeom, material );
   s = 2;
-  mesh.position.set( x-window.innerWidth/(2), y+window.innerHeight/(2), z + (2 * amount));
+  mesh.position.set( x-window.innerWidth/(1.5), y+window.innerHeight/(1.6), z + (2 * amount));
   mesh.rotation.set( rx, ry, rz );
 
   mesh.scale.set( s, s, s );
