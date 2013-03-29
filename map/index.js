@@ -132,7 +132,7 @@ function onMouseMove (e){
       $("#local").text("Local: "+keyList[0]+"B");
       $("#state").text("State: "+keyList[1]+"B");
       $("#total").text("Total: "+keyList[2]+"B");
-    console.log(hoverData);
+
 
 
     $("#tip").show();
