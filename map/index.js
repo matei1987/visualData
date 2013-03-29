@@ -79,7 +79,7 @@ function extrudeStates(data){
     obj = scene.children[ 1 ];
         scene.remove(obj);
 
-  var states = new THREE.Object3D();
+  states = new THREE.Object3D();
   states.position.y = 0;
   states.position.x = 0;
   scene.add( states );
@@ -111,13 +111,37 @@ function onMouseMove (e){
     }
   var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
   intersects = raycaster.intersectObjects(states.children );
-
+  $("#tip").hide();
 
   if(intersects.length > 0){
     var intersection = intersects[0];
     obj = intersection.object;
     obj.material.color.setRGB( 1, 0, 0);
+
+
+  var hoverData = dataJSON[$(".active").data("area")][statecode[obj.name]];
+
+    
+
+
+    $("#tip").css({
+      "top":e.clientY,
+      "left":e.clientX
+    });
+    var keyList = [];
+    for (var i in hoverData){
+        keyList.push(hoverData[i]);
     }
+     $("#title").text(statecode[obj.name]);
+      $("#local").text("Local: "+keyList[0]+"B");
+      $("#state").text("State: "+keyList[1]+"B");
+      $("#total").text("Total: "+keyList[2]+"B");
+    console.log(hoverData);
+
+
+    $("#tip").show();
+    }
+
     return e;
 
 }
@@ -391,4 +415,7 @@ $(document).ready(function() {
     
     init();
     animate();
+    $("body").after("<div id = 'tip' ></div>");
+    $("#tip").append("<div id = 'title'></div><div id = 'local'></div><div id = 'state'></div><div id = 'total'></div>")
+    $("#tip").hide();
 });
