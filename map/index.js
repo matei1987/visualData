@@ -65,8 +65,7 @@ function init() {
 
   // Bind to the filters
   $('#filter a').click(function(e) {
-    e.preventDefault();
-    
+  
     area = $(this).data('area');
     extrudeStates(area);
 
@@ -119,6 +118,7 @@ function onMouseMove (e){
     obj = intersection.object;
     obj.material.color.setRGB( 1, 0, 0);
     }
+    return e;
 
 }
 };
@@ -132,7 +132,9 @@ function animate() {
 
 function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
   data = data || 'pensions';
+
   var amount = dataJSON[data][statecode[state]]['State and Local Spending'] * 10 || 1; //Math.random() * (500 - 10) + 10; 
+   amount = amount/3;
   var eGeom = new THREE.ExtrudeGeometry( shape, {amount: amount, bevelEnabled: false } );
   var material = new THREE.MeshBasicMaterial({
     color: color 
