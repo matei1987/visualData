@@ -171,7 +171,7 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
   var eGeom = new THREE.ExtrudeGeometry( shape, {amount: amount, bevelEnabled: false } );
   var material = new THREE.MeshLambertMaterial({
     color: color,
-    opacity: 0.85
+    opacity: 0.9
   });
 
   var mesh = new THREE.Mesh( eGeom, material );
