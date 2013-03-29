@@ -8,13 +8,6 @@ var dataJSON = {
 
   var states = new THREE.Object3D();
 
-var pointLight =
-  new THREE.PointLight(0xFFFFFF);
-
-// set its position
-pointLight.position.x = -100;
-pointLight.position.y = -800;
-pointLight.position.z = 1000;
 /**
  * Initialize the Visualization
  */
@@ -29,6 +22,13 @@ function init() {
 
   scene = new THREE.Scene();
   
+var pointLight =
+  new THREE.PointLight(0xFFFFFF);
+
+// set its position
+pointLight.position.x = 10;
+pointLight.position.y = 50;
+pointLight.position.z = 1000;
 
 // add to the scene
 scene.add(pointLight);  
@@ -63,8 +63,13 @@ camera = new THREE.PerspectiveCamera(
   var projecter = new THREE.Projector(),
   mouseVector = new THREE.Vector3();
 
+<<<<<<< HEAD
+  var containerDOM = document.getElementById('container');
+  containerDOM.addEventListener('mousemove', onMouseMove, true);
+=======
   window.addEventListener('mousemove', onMouseMove, true);
 
+>>>>>>> 2802cadf854afecbf76bd000936224e2372affc5
   controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
@@ -82,7 +87,7 @@ camera = new THREE.PerspectiveCamera(
 
 function extrudeStates(data){
 
-    obj = scene.children[ 2 ];
+    obj = scene.children[ 1 ];
         scene.remove(obj);
 
   states = new THREE.Object3D();
@@ -157,9 +162,6 @@ function animate() {
   
   requestAnimationFrame(animate);
   controls.update();
-pointLight.position.x = camera.position.x;
-pointLight.position.y = camera.position.y;
-pointLight.position.z = camera.position.z;
   renderer.render(scene, camera);
 };
 
@@ -171,7 +173,7 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
   var eGeom = new THREE.ExtrudeGeometry( shape, {amount: amount, bevelEnabled: false } );
   var material = new THREE.MeshLambertMaterial({
     color: color,
-    opacity: 0.85
+    shading: THREE.SmoothShading
   });
 
   var mesh = new THREE.Mesh( eGeom, material );
