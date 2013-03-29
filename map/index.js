@@ -82,7 +82,7 @@ camera = new THREE.PerspectiveCamera(
 
 function extrudeStates(data){
 
-    obj = scene.children[ 1 ];
+    obj = scene.children[ 2 ];
         scene.remove(obj);
 
   states = new THREE.Object3D();
