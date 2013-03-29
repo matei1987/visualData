@@ -40,14 +40,12 @@ function init() {
   var i = 0;
 
   for (var path in statePaths.paths) {
-    if (path != 'mi') {
       var shape = transformSVGPath(statePaths.paths[path]);
       stateShapes.push(shape);      
       var color = colorArray[i]; 
       var shapeMesh = createShape(shape, color, 0, 0, 0, Math.PI, 0, 0, 1, i, path);
       shapeMesh.name = path;
       states.add(shapeMesh);
-    }
     i++;
   }
 
@@ -55,13 +53,11 @@ function init() {
   var projecter = new THREE.Projector(),
   mouseVector = new THREE.Vector3();
 
-  window.addEventListener('mousemove', onMouseMove, false);
+  window.addEventListener('mousemove', onMouseMove, true);
 
-  controls = new THREE.TrackballControls(camera);
+  controls = new THREE.TrackballControls(camera, document.getElementById('container'));
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
-  controls.autoForward = false;
-  controls.dragToLook = true;
 
   // Bind to the filters
   $('#filter a').click(function(e) {
