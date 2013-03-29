@@ -55,7 +55,7 @@ function init() {
 
   window.addEventListener('mousemove', onMouseMove, true);
 
-  controls = new THREE.TrackballControls(camera, document.getElementById('container'));
+  controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
 
