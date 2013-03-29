@@ -22,7 +22,17 @@ function init() {
 
   scene = new THREE.Scene();
   
-  camera = new THREE.PerspectiveCamera(
+var pointLight =
+  new THREE.PointLight(0xFFFFFF);
+
+// set its position
+pointLight.position.x = 10;
+pointLight.position.y = 50;
+pointLight.position.z = 1000;
+
+// add to the scene
+scene.add(pointLight);  
+camera = new THREE.PerspectiveCamera(
     35,             // Field of view
     containerWidth / containerHeight, // Aspect ratio
     .08,           // Near plane
@@ -53,9 +63,9 @@ function init() {
   var projecter = new THREE.Projector(),
   mouseVector = new THREE.Vector3();
 
-  window.addEventListener('mousemove', onMouseMove, true);
-
-  controls = new THREE.TrackballControls(camera, document.getElementById('container'));
+  var containerDOM = document.getElementById('container');
+  containerDOM.addEventListener('mousemove', onMouseMove, true);
+  controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
 
@@ -156,8 +166,9 @@ function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
   var amount = dataJSON[data][statecode[state]]['State and Local Spending'] * 10 || 1; //Math.random() * (500 - 10) + 10; 
    amount = amount/3;
   var eGeom = new THREE.ExtrudeGeometry( shape, {amount: amount, bevelEnabled: false } );
-  var material = new THREE.MeshBasicMaterial({
-    color: color 
+  var material = new THREE.MeshLambertMaterial({
+    color: color,
+    shading: THREE.SmoothShading
   });
 
   var mesh = new THREE.Mesh( eGeom, material );
