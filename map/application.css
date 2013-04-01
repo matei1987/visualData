@@ -19,6 +19,10 @@ html[xmlns] .clearfix { display: block;}
  
 * html .clearfix { height: 1%;}
 
+body{
+	overflow: hidden;
+}
+
 #container {
 
 	top:0;
@@ -27,6 +31,7 @@ html[xmlns] .clearfix { display: block;}
 }
 
 #filter {
+ position: relative;
 	padding: 0;
 	/*box-shadow: inset 0 0px 0px 1px rgba(255,255,255,0.5);*/
 
@@ -34,6 +39,7 @@ html[xmlns] .clearfix { display: block;}
 	background: #2C3E50;
 	font-family: "Lato", sans-serif;
 	font-weight: 300;
+	z-index: 9999;
 }
 
 #filter .title {
