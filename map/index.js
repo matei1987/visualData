@@ -91,13 +91,11 @@ function extrudeStates(data){
   scene.add( states );
     var i = 0;
     for (var path in statePaths.paths) {
-      if (path != 'mi') {
         var shape = stateShapes[i];
         var color = colorArray[i]; 
         var shapeMesh = createShape(shape, color, 0, 0, 0, Math.PI, 0, 0, 1, i, path, data);
         shapeMesh.name = path;
         states.add(shapeMesh);
-      }
       i++;
     }
 }
@@ -154,7 +152,6 @@ function onMouseMove (e){
 };
 
 function animate() {
-  
   requestAnimationFrame(animate);
   controls.update();
 pointLight.position.x = camera.position.x;
