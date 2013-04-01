@@ -71,7 +71,8 @@ camera = new THREE.PerspectiveCamera(
 
   // Bind to the filters
   $('#filter a').click(function(e) {
-  
+    e.preventDefault();
+    
     area = $(this).data('area');
     extrudeStates(area);
 
