@@ -63,13 +63,8 @@ camera = new THREE.PerspectiveCamera(
   var projecter = new THREE.Projector(),
   mouseVector = new THREE.Vector3();
 
-<<<<<<< HEAD
-  var containerDOM = document.getElementById('container');
-  containerDOM.addEventListener('mousemove', onMouseMove, true);
-=======
   window.addEventListener('mousemove', onMouseMove, true);
 
->>>>>>> 2802cadf854afecbf76bd000936224e2372affc5
   controls = new THREE.TrackballControls(camera);
   controls.movementSpeed = 50;
   controls.rollSpeed = Math.PI / 12;
@@ -81,7 +76,7 @@ camera = new THREE.PerspectiveCamera(
     extrudeStates(area);
 
     // Swap the active states
-    $('#filter a[data-source!="'+area+'"]').removeClass('active');
+    $('.active').removeClass('active');
     $(this).addClass('active');
   });
 
@@ -108,54 +103,7 @@ function extrudeStates(data){
 }
 
 function onMouseMove (e){
-  var position = $('canvas').position(),
-  offsetY = position.top,
-  offsetX = position.left;
 
-  mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1;
-    mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
-
-    for (var i in states.children){
-      var state = states.children[i];
-
-      state.material.color.setHex(colorArray[i]);
-    }
-  var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
-  intersects = raycaster.intersectObjects(states.children );
-  $("#tip").hide();
-
-  if(intersects.length > 0){
-    var intersection = intersects[0];
-    obj = intersection.object;
-    obj.material.color.setRGB( 1, 0, 0);
-
-
-  var hoverData = dataJSON[$(".active").data("area")][statecode[obj.name]];
-
-    
-
-
-    $("#tip").css({
-      "top":e.clientY,
-      "left":e.clientX
-    });
-    var keyList = [];
-    for (var i in hoverData){
-        keyList.push(hoverData[i]);
-    }
-     $("#title").text(statecode[obj.name]);
-      $("#local").text("Local: "+keyList[0]+"B");
-      $("#state").text("State: "+keyList[1]+"B");
-      $("#total").text("Total: "+keyList[2]+"B");
-
-
-
-    $("#tip").show();
-    }
-
-    return e;
-
-}
 };
 
 function animate() {
