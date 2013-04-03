@@ -54,7 +54,7 @@ Map.Controllers.App = (function() {
       // Load scene
       appView = new Map.Views.App({ el: renderer.domElement });
       
-      container.appendChild(renderer.domElement);
+      $container.appendChild(renderer.domElement);
     },
 
     animate: function() {
@@ -125,9 +125,9 @@ Map.Views.App = Backbone.View.extend({
 
   initMap: function() {
     // TODO: This is where I will add the collection
-    // I will create a view for the individual states, which will return a 3object
+    // I will create a view for the individual states, which will return a 3dObject
     // each "view" (3dobject) will be added to the scene
-    // Map.Controllers.App.scene.addObject( mesh );
+    // Map.Controllers.App.scene.addObject( states );
 
   },
 
