@@ -151,7 +151,7 @@ Map.Views.App = Backbone.View.extend({
 
     var states = this.collection;
 
-    for (var i, len = states.children.length; i < len; i++)
+    for (var i, len = states.children.length; i < len; i++) {
       var state = states.children[i];
       state.material.color.setHex(colorArray[i]);
     }
@@ -191,7 +191,7 @@ Map.Views.App = Backbone.View.extend({
 Map.Models.State = Backbone.Model.extend();
 
 Map.Views.State = Backbone.View.extend({
-
-  this.model = new Map.Models.State();
-
+  initialize: function() {
+    this.model = new Map.Models.State();
+  }
 });
