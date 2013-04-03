@@ -1,0 +1,305 @@
+[33mcommit b6b6afc3f0b7aeb655e94cd2c55427dba24e959b[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Mon Apr 1 14:20:52 2013 -0400
+
+    nav bar z-index and body overflow updates
+
+[33mcommit 2df945976eb13745eb453643e2e6df1fb9cc43a9[m
+Merge: 2811be1 2d98d67
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Mon Apr 1 14:17:08 2013 -0400
+
+    Merge branch 'master' of github.com:matei1987/visualData
+
+[33mcommit 2811be114d67836b7916a69c3e513f9e2eded6a6[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Mon Apr 1 13:21:52 2013 -0400
+
+    testing?
+    git commit -m testing
+
+[33mcommit 2d98d6798df449b3be8b19b8b573a1f664a1cfa1[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Mon Apr 1 13:19:00 2013 -0400
+
+    Yeah don't remove this! It prevents the # on the URL on click
+
+[33mcommit 5c283afd10a916d7ab78370ea67badeccc457cee[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Mon Apr 1 13:07:27 2013 -0400
+
+    fixed michigan disappearing
+
+[33mcommit 6927547fd230305629707a161f8d6bfeb0a1f0ac[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 23:14:43 2013 -0400
+
+    changed opacity
+
+[33mcommit 4dfaa7ad4529266c906a71c2b3f2f815d54a09b0[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 22:57:34 2013 -0400
+
+    i dont remember what i did here
+
+[33mcommit 87f1bdcd8b5be2ca7adcd95868ba592c11d1881e[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 22:39:20 2013 -0400
+
+    tooltip edits
+
+[33mcommit 377fec085f75c35e63a4a6bf0b82cba54899bed0[m
+Merge: 7c4e283 c25f8d1
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 22:28:11 2013 -0400
+
+    Merge branch 'master' of github.com:matei1987/visualData
+
+[33mcommit 7c4e283c4be7da17a1454eef9c656cc992937188[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 22:27:52 2013 -0400
+
+    more CSS alignments
+
+[33mcommit c25f8d1e8345d7f6b6255b33515e0433de97f630[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 22:24:14 2013 -0400
+
+    fixed removeal
+
+[33mcommit b665adf6c665e9a3009fe3e40bbdf1e766455e06[m
+Merge: b44ec0f 2802cad
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 22:15:40 2013 -0400
+
+    fixed conflcits
+
+[33mcommit b44ec0fb8d53954caafcf77c89fe5ec3265acd43[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 22:11:53 2013 -0400
+
+    did some work
+
+[33mcommit 2802cadf854afecbf76bd000936224e2372affc5[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 22:10:54 2013 -0400
+
+    CSS and more positioning
+
+[33mcommit a85b730cf4853287ae1b1d7f7aa93f7eb1029e3f[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 21:29:01 2013 -0400
+
+    worked on centering the landing page map
+
+[33mcommit dadba684e1127fcdfea19e0552c018522f7f25ba[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 21:23:54 2013 -0400
+
+    removed debug code
+
+[33mcommit b513842a1d0d6e7b9525f95a5ab57664c3f947bd[m
+Merge: e0d1823 acab193
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 21:16:49 2013 -0400
+
+    Merge branch 'master' of github.com:matei1987/visualData
+
+[33mcommit e0d18232d21c8b60fa354d07a54f270cd509ef94[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 21:15:46 2013 -0400
+
+    forgot some files
+
+[33mcommit fd45547a019846d2be5f593cf9ef86791456752b[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Thu Mar 28 21:13:04 2013 -0400
+
+    Added tooltip with state spending data
+
+[33mcommit acab1938de8d4ef9890f2e145992e27328655cc7[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Thu Mar 28 20:57:19 2013 -0400
+
+    this fixes issue #1
+
+[33mcommit e27870cf48a98cb8bce5cd7ea6f83320858b9e3a[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 28 13:37:11 2013 -0400
+
+    Last work on this ui
+
+[33mcommit 3e65a1c25138bcbc6ab4b70754164c4344f12000[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 28 13:31:24 2013 -0400
+
+    Better UI a bit
+
+[33mcommit 092bd09c85e623377ad8e81e7fd8938cd1652182[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 28 13:17:27 2013 -0400
+
+    Use jQuery container
+
+[33mcommit 2d1b17540c6e86ea05902d249ae7b6b667a4ee1c[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Wed Mar 27 20:51:52 2013 -0400
+
+    Filters fixin'
+
+[33mcommit e66a8e67dae91ccdbbdba278fefdb7e1eaa5e663[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Wed Mar 27 18:26:57 2013 -0400
+
+    Style it up a bit
+
+[33mcommit 2633906892a0c024bfb12c8f40f3b77728f4067e[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sun Mar 24 22:28:16 2013 -0400
+
+    got states to change size with data...code needs serious refactoring
+
+[33mcommit 22c545d1a6e0956803014893409fdde19ee83009[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sun Mar 24 15:27:13 2013 -0400
+
+    added data json to index.html changed case of statecodes and made extrusion random
+
+[33mcommit d93a99a8d0d07d239561dc290944155e095f3211[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sun Mar 24 01:03:22 2013 -0400
+
+    add drop down..add offset to mouse...create state code lookup json file
+
+[33mcommit 957a1ccfbc7bde42fd5a34d409da9f444a9f41c5[m
+Merge: 49e0c87 3ac7848
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sun Mar 24 00:44:20 2013 -0400
+
+    Merge branch 'master' of github.com:matei1987/visualData
+
+[33mcommit 49e0c87d59150a37cf8e85e968d084b4781de018[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sun Mar 24 00:19:51 2013 -0400
+
+    json files were still in csv..used http://www.cparker15.com/code/utilities/csv-to-json/ to convert them to json
+
+[33mcommit 3ac7848b46724b6d1e8d3568d915281961f3a8ee[m
+Author: Chris Bras <cb59@njit.edu>
+Date:   Sun Mar 24 00:52:42 2013 -0300
+
+    somehow readme was deleted re added it
+
+[33mcommit 85e4db2e770fab232dcf8037128bf8d99f68a551[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sat Mar 23 23:46:42 2013 -0400
+
+    got the exstrusion to work and red highlight returns back to original color
+
+[33mcommit 7fffb1c412cdfbc0af07808ac6d9394c29524a0f[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sat Mar 23 14:37:53 2013 -0400
+
+    got the hoverover working!
+
+[33mcommit 83e6cf48378ec1111abb9fa2d4b892ed8e91d9ba[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Sat Mar 23 14:31:12 2013 -0400
+
+    added hoverover effect, not working right...works when I add other shapes, but not on states..help please!
+
+[33mcommit a442375bb33a7e8d7ba59ca705c8bae2ce5fb363[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 14 13:22:14 2013 -0400
+
+    Filter bar placeholder
+
+[33mcommit 40157e55de60babbf3867c031fcc31fa7314b686[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 14 13:21:00 2013 -0400
+
+    Make it using the stuff we did in class
+
+[33mcommit b6c8f70c846eb3ddb3d28b20fc561b4c2edc54f2[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 14 13:19:44 2013 -0400
+
+    That way causes a few bugs.
+
+[33mcommit ce847a08c6ac9388ed92b43a08f070908a9a7775[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 14 13:14:35 2013 -0400
+
+    Reorganizing and including jQuery/three.js
+
+[33mcommit b10976cd8baf61509e365829607d1a4091c119e1[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Thu Mar 14 13:09:36 2013 -0400
+
+    jQuery
+
+[33mcommit 493d7b2bb2ea9a4b0249f8e127d2165b9be913cc[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Wed Mar 13 18:00:09 2013 -0400
+
+    Tried adding new svg paths to fix squilggly line problem. Didn't work :(
+
+[33mcommit d083c7d50416fc2baba9b43f655a458591ab6816[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Wed Mar 13 17:46:29 2013 -0400
+
+    changed perspective
+
+[33mcommit 3688dec0ecd94f074a95b3a6f786a1eec9326805[m
+Author: Matei Gheorghiu <matei1987@gmail.com>
+Date:   Wed Mar 13 15:23:49 2013 -0400
+
+    fixed perpective issue
+
+[33mcommit eeb0e21fbf3986cc1013c757a4c6d87158cc6711[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Tue Mar 12 21:56:19 2013 -0400
+
+    Added code from livecoding Nathaniel was working on, colors are static
+
+[33mcommit 55b76cd01ffea4ecf60ad743d6d3126d6fd0a0c8[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Tue Mar 12 21:55:13 2013 -0400
+
+    moved files
+
+[33mcommit fbf4cbf80e31a1cd39097a40118c022e15ef7b08[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Tue Mar 12 21:54:19 2013 -0400
+
+    m
+
+[33mcommit 431876ead14c37dff2cba80c7b94f99cf146120d[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Tue Mar 12 21:24:13 2013 -0400
+
+    removed map
+
+[33mcommit a7b0db4d0e6e41ab65dbab816728aeab8455f76b[m
+Author: Chris Bras <ceb922@hotmail.com>
+Date:   Tue Mar 12 21:16:42 2013 -0400
+
+    Took the code Nathaniel worked on on livecoding and made a project out of it, added a colors array to make it static
+
+[33mcommit 8b38c907876ec0d3749488bb69d58b0565a92e6a[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Mon Mar 11 14:12:16 2013 -0400
+
+    Readme updates for data sets
+
+[33mcommit 8e3256b504926fa5bbff8fdb73a82be461140c67[m
+Author: Sean Fisher <srtfisher@gmail.com>
+Date:   Mon Mar 11 14:08:57 2013 -0400
+
+    Datasets for 2013
+
+[33mcommit d6143184a5878629cedcc8dee01b2a57393206a5[m
+Author: matei1987 <matei1987@gmail.com>
+Date:   Mon Mar 4 11:04:10 2013 -0800
+
+    Initial commit

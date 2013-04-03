@@ -160,9 +160,6 @@ function onMouseMove (e){
 
 function animate() {
   
-  requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
 };
 
 function createShape( shape, color, x, y, z, rx, ry, rz, s, xx, state,data ) {
