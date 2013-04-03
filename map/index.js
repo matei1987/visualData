@@ -13,12 +13,17 @@ Map.Controllers.App = (function() {
     camera: null,
     scene: null,
     controls: null,
-    pointLight: null
+    pointLight: null,
 
     initialize: function() {
 
-      _.bindAll( this, "animate", "render", "update" );
+      _.bindAll( this, "animate", "render" );
 
+      $container = $('#container');
+
+      containerWidth = $container.width();
+
+      containerHeight = $container.height();
        // Create scene
       this.scene = new THREE.Scene();
       
@@ -26,9 +31,9 @@ Map.Controllers.App = (function() {
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
 
-      pointLight.position.x = 10;
-      pointLight.position.y = 50;
-      pointLight.position.z = 1000;
+      this.pointLight.position.x = 10;
+      this.pointLight.position.y = 50;
+      this.pointLight.position.z = 1000;
 
       // Create Camera
       this.camera = new THREE.PerspectiveCamera(
@@ -37,16 +42,12 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
-      camera.position.set(0, -2000, 2000);
-      camera.lookAt(scene.position);
+      this.camera.position.set(0, -2000, 2000);
+      this.camera.lookAt(this.scene.position);
      
-      scene.add(camera);
+      this.scene.add(this.camera);
       
       // Create renderer
-      $container = $('#container');
-
-      containerWidth = $container.width();
-      containerHeight = $container.height();
       renderer = new THREE.WebGLRenderer({antialias: true});
       renderer.setSize(containerWidth, containerHeight);
       
@@ -56,7 +57,7 @@ Map.Controllers.App = (function() {
       container.appendChild(renderer.domElement);
     },
 
-    animiate: function() {
+    animate: function() {
 
       requestAnimationFrame(this.animate);
       this.controls.update();
@@ -75,6 +76,33 @@ Map.Controllers.App = (function() {
 Map.Models.State = Backbone.Model.extend();
 
 Map.Collections.States = Backbone.Collection.extend({
+  // TODO: set up express to send array of objects from this url in JSON
+  //
+  // SCHEMA:
+  //
+  // [
+  //   {
+  //     "id": 1,
+  //     "code": "ca",
+  //     "name": "California",
+  //     "shape": "fdsafsad...",
+  //      "data" {
+  //         "pensions": {
+  //           "state": 50,
+  //           "local": 10
+  //         },
+  //         "healthcare": {
+  //           "state": 50,
+  //           "local": 10
+  //         },
+  //         "education": {
+  //           "state": 50,
+  //           "local": 10
+  //         }
+  //     }
+  //   }
+  // ]
+
   model: Map.Models.State,
   url: 'http://api.states.com/states'
 });
@@ -83,47 +111,32 @@ Map.Collections.States = Backbone.Collection.extend({
 Map.Views.App = Backbone.View.extend({
 
   events: {
-    "hover": "hoverInfo"
+    "mousemove": "hoverInfo"
   },
 
   initialize: function() {
-    _.bindAll(this, "update");
+    // _.bindAll(this, "update");
 
     this.collection = new Map.Collections.States();
     this.collection.fetch();
 
     this.initMap();
-    this.stateView = new Map.Views.State();
-
   },
 
   initMap: function() {
-    Map.Controllers.App.scene.addObject( mesh );
+    // TODO: This is where I will add the collection
+    // I will create a view for the individual states, which will return a 3object
+    // each "view" (3dobject) will be added to the scene
+    // Map.Controllers.App.scene.addObject( mesh );
 
   },
 
   hoverInfo: function(e) {
-    this.stateView.showBox(e);
 
+    // TODO: create hover template.
+    // Possible Option: Create a view just for the hover box and pass this.collection.models[x].data as the model..
+    // Hoverinfo should cast ray grab the id attribute from the object and render the template with the correct model
+    // Should set display to none in the beginning of the function
   }
 
-});
-
-Map.Views.State = Backbone.View.extend({
-
-
-  initialize: function() {
-    _.bindAll(this, "highlightState", "update");
-
-    this.initState();
-  },
-
-  update: function() {
-
-  },
-
-  initState: function(){
-    Map.Controllers.App.scene.addObject( this.sprite );
-
-  }
 });
