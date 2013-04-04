@@ -105,7 +105,7 @@ createShape: function (data) {
 
 Map.Collections.States = Backbone.Collection.extend({
   model: Map.Models.State,
-  url: 'states.json'
+  url: 'schema.json'
 });
 
 
@@ -136,10 +136,10 @@ Map.Views.App = Backbone.View.extend({
     var $tip = $("#tip"),
     position = $('canvas').position(),
     offsetY = position.top,
-    offsetX = position.left,
+    offsetX = position.left;
 
-    mouseVector = {},
-    // mouseVector.x = 2 * (e.clientX - offsetX ) / containerWidth) - 1,
+    var mouseVector = {};
+    mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1,
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
     $tip.hide();
@@ -160,7 +160,7 @@ Map.Views.App = Backbone.View.extend({
       obj.material.color.setRGB( 1, 0, 0);
 
 
-      var hoverData = this.collection.where({''});
+      var hoverData = this.collection.where({'id': 1});
       dataJSON[$(".active").data("area")][statecode[obj.name]];
 
       $tip.css({
