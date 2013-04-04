@@ -115,16 +115,17 @@ Map.Views.App = Backbone.View.extend({
   },
 
   initialize: function() {
-    // _.bindAll(this, "update");
+    _.bindAll(this);
 
     this.collection = new Map.Collections.States();
     this.collection.fetch();
-    this.initMap();
+    console.log('hello');
+    this.initMap;
   },
 
   initMap: function() {
-    console.log(this.collection);
     _.each(this.collection.models, function(state){
+        console.log(this.collection);
         var mesh = new Map.Views.State({model: state}).render();
         console.log(mesh);
         Map.Controllers.App.scene.add( mesh );
