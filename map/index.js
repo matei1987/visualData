@@ -123,7 +123,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   initMap: function() {
-    console.log(this.collections);
+    console.log(this.collection);
     _.each(this.collection.models, function(state){
         var mesh = new Map.Views.State({model: state}).render();
         console.log(mesh);
