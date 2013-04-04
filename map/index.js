@@ -84,36 +84,26 @@ Map.Controllers.App = (function() {
 })();
 
 
-Map.Models.State = Backbone.Model.extend();
+Map.Models.State = Backbone.Model.extend({
+
+createShape: function (data) {
+    data = data || 'pensions';
+
+    var amount = this.get('data.pensions.state') * 3 || 1;
+    var eGeom = new THREE.ExtrudeGeometry( this.get('shape'), {amount: amount, bevelEnabled: false } );
+    var material = new THREE.MeshLambertMaterial({
+      color: this.get('color'),
+      shading: THREE.SmoothShading
+    });
+
+    var mesh = new THREE.Mesh( eGeom, material );
+    mesh.position.set(window.innerWidth/(1.5), window.innerHeight/(1.6), 2 * amount);
+
+    return mesh;
+  }
+});
 
 Map.Collections.States = Backbone.Collection.extend({
-  // TODO: set up express to send array of objects from this url in JSON
-  //
-  // SCHEMA:
-  //
-  // [
-  //   {
-  //     "id": 1,
-  //     "code": "ca",
-  //     "name": "California",
-  //     "shape": "fdsafsad...",
-  //      "data" {
-  //         "pensions": {
-  //           "state": 50,
-  //           "local": 10
-  //         },
-  //         "healthcare": {
-  //           "state": 50,
-  //           "local": 10
-  //         },
-  //         "education": {
-  //           "state": 50,
-  //           "local": 10
-  //         }
-  //     }
-  //   }
-  // ]
-
   model: Map.Models.State,
   url: 'states.json'
 });
@@ -129,25 +119,30 @@ Map.Views.App = Backbone.View.extend({
 
     this.collection = new Map.Collections.States();
     this.collection.fetch();
-
+    
     this.initMap();
   },
 
   initMap: function() {
-    // TODO: This is where I will add the collection
-    // I will create a view for the individual states, which will return a 3dObject
-    // each "view" (3dobject) will be added to the scene
-    // Map.Controllers.App.scene.addObject( states );
-
+    _.each(this.collection.models, function(state){
+        var mesh = new Map.Views.State({model: state}).render();
+        Map.Controllers.App.scene.add( mesh );
+    });
   },
 
   hoverInfo: function(e) {
-    var position = $('canvas').position(),
-    offsetY = position.top,
-    offsetX = position.left;
 
-    mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1;
+
+    var $tip = $("#tip"),
+    position = $('canvas').position(),
+    offsetY = position.top,
+    offsetX = position.left,
+
+    mouseVector = {},
+    mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1,
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
+
+    $tip.hide();
 
     var states = this.collection;
 
@@ -158,16 +153,17 @@ Map.Views.App = Backbone.View.extend({
 
     var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
     intersects = raycaster.intersectObjects(states.children );
-    $("#tip").hide();
 
     if(intersects.length){
       var intersection = intersects[0];
       obj = intersection.object;
       obj.material.color.setRGB( 1, 0, 0);
 
-      var hoverData = dataJSON[$(".active").data("area")][statecode[obj.name]];
 
-      $("#tip").css({
+      var hoverData = this.collection.where({''});
+      dataJSON[$(".active").data("area")][statecode[obj.name]];
+
+      $tip.css({
         "top":e.clientY,
         "left":e.clientX
       });
@@ -177,7 +173,7 @@ Map.Views.App = Backbone.View.extend({
       $("#state").text("State: "+hoverData["Local Spending"]+"B");
       $("#total").text("Total: "+hoverData["State and Local Spending"]+"B");
 
-      $("#tip").show();
+      $tip.show();
     }
 
     // TODO: create hover template.
@@ -192,6 +188,12 @@ Map.Models.State = Backbone.Model.extend();
 
 Map.Views.State = Backbone.View.extend({
   initialize: function() {
-    this.model = new Map.Models.State();
+    // this.model = new Map.Models.State();
+  },
+
+  render: function(){
+    var shapeMesh = this.model.createShape('pensions');
+
+    return shapeMesh;
   }
 });
