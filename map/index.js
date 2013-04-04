@@ -151,7 +151,7 @@ Map.Views.App = Backbone.View.extend({
 
     var states = this.collection;
 
-    for (var i, len = states.children.length; i < len; i++) {
+    for (var i = 0, len = states.children.length; i < len; i++) {
       var state = states.children[i];
       state.material.color.setHex(colorArray[i]);
     }
@@ -173,9 +173,9 @@ Map.Views.App = Backbone.View.extend({
       });
 
       $("#title").text(statecode[obj.name]);
-      $("#local").text("Local: "+hoverData[0]+"B");
-      $("#state").text("State: "+hoverData[1]+"B");
-      $("#total").text("Total: "+hoverData[2]+"B");
+      $("#local").text("Local: "+hoverData["State Spending"]+"B");
+      $("#state").text("State: "+hoverData["Local Spending"]+"B");
+      $("#total").text("Total: "+hoverData["State and Local Spending"]+"B");
 
       $("#tip").show();
     }
