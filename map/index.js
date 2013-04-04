@@ -119,7 +119,7 @@ Map.Views.App = Backbone.View.extend({
 
     this.collection = new Map.Collections.States();
     this.collection.fetch();
-    this.initMap;
+    this.initMap();
   },
 
   initMap: function() {
