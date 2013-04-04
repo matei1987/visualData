@@ -139,7 +139,7 @@ Map.Views.App = Backbone.View.extend({
     offsetX = position.left,
 
     mouseVector = {},
-    mouseVector.x = 2 * (e.clientX - offsetX ) / containerWidth) - 1,
+    // mouseVector.x = 2 * (e.clientX - offsetX ) / containerWidth) - 1,
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
     $tip.hide();
