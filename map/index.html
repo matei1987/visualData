@@ -14,11 +14,6 @@
 	<script type="text/javascript" src="js/jquery/1.9.1.js"></script>
 	<script type="text/javascript" src="js/three.js/three.js"></script>
 	<script src="js/three.js/TrackballControls.js"></script>
-	<script type="text/javascript" src="states.json"></script>
-	<script type="text/javascript" src="statecode.json"></script>
-	<script type="text/javascript" src="../data-sets/2013/pensions.json"></script>
-	<script type="text/javascript" src="../data-sets/2013/education.json"></script>
-	<script type="text/javascript" src="../data-sets/2013/health-care.json"></script>
 	<script type="text/javascript" src="js/underscore.js"></script>
 	<script type="text/javascript" src="js/backbone.js"></script>
 	<script type="text/javascript" src="js/backbone-deep-model.js"></script>
@@ -29,8 +24,12 @@
 </head>
  <body>
 	<script type="text/javascript">
-		Map.Controllers.App.initialize();
-		Map.Controllers.App.animate();
+
+		window.onload = function(){
+
+			Map.Controllers.App.initialize();
+			Map.Controllers.App.animate();
+		};
 	</script>
 	<div class="clearfix">
 		<div id="filter">
