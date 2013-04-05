@@ -100,10 +100,10 @@ Map.Controllers.App = (function() {
 Map.Models.State = Backbone.Model.extend({
 
 createShape: function (data) {
-    data = data || 'pensions';
+    data = data || 'education';
 
 
-    var amount = this.attributes.data.pensions.state * 3 || 1;
+    var amount = this.attributes.data[data].state * 3 || 1;
     // var state = JSON.parse(this.attributes.shape);
     var state = {};
     state = this.attributes.shape;
