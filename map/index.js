@@ -115,9 +115,9 @@ createShape: function (data) {
     state = this.attributes.shape;
     state.__proto__ = THREE.Shape.prototype;
     var eGeom = new THREE.ExtrudeGeometry( state, {amount: amount, bevelEnabled: false } );
-    var material = new THREE.MeshNormalMaterial({
-      color: this.attributes.color
-      // shading: THREE.SmoothShading
+    var material = new THREE.MeshLambertMaterial({
+      color: this.attributes.color,
+      shading: THREE.SmoothShading
     });
 
     var mesh = new THREE.Mesh( eGeom, material );
@@ -214,6 +214,8 @@ Map.Views.State = Backbone.View.extend({
   render: function(){
     var shapeMesh = this.model.createShape('pensions');
 
+    shapeMesh.position.y = 0;
+    shapeMesh.position.x = 0;
     return shapeMesh;
   }
 });
