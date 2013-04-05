@@ -72,7 +72,7 @@ Map.Controllers.App = (function() {
       this.collection.fetch().complete(function(){
         appView = new Map.Views.App({
           el: renderer.domElement,
-          collection: this.collection
+          collection: self.collection
         });
       $container.append(renderer.domElement);
       });
