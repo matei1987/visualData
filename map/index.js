@@ -72,18 +72,12 @@ Map.Controllers.App = (function() {
       var self = this;
       this.collection.fetch().complete(function(){
 
-      appView = new Map.Views.App({
-        el: renderer.domElement,
-        collection: self.collection
-      });
+        appView = new Map.Views.App({
+          el: renderer.domElement,
+          collection: self.collection
+        });
 
       });
-      // Load scene
-
-      // for (var i=0; i < stateObjects.length; i++){
-      //   this.collection.add(stateObjects[i]);
-      // };
-
       
     },
 
@@ -121,7 +115,7 @@ createShape: function (data) {
     });
 
     var mesh = new THREE.Mesh( eGeom, material );
-    mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), 2 * amount);
+    mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), 6 * amount);
 
     return mesh;
   }
