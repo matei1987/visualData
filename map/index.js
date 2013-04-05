@@ -35,9 +35,9 @@ Map.Controllers.App = (function() {
 
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
-      this.pointLight.position.x = 10;
-      this.pointLight.position.y = 50;
-      this.pointLight.position.z = 1000;
+      this.pointLight.position.x = 270;
+      this.pointLight.position.y = 296;
+      this.pointLight.position.z = -900;
       this.scene.add(this.pointLight);
 
       // Create Camera
