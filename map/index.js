@@ -115,7 +115,7 @@ createShape: function (data) {
     });
 
     var mesh = new THREE.Mesh( eGeom, material );
-    mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), amount);
+    mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), 2 * amount);
 
     return mesh;
   }
