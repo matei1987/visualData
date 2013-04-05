@@ -66,11 +66,13 @@ Map.Controllers.App = (function() {
 
 
       this.collection = new Map.Collections.States();
+
+      var self = this;
       this.collection.fetch().complete(function(){
 
       appView = new Map.Views.App({
         el: renderer.domElement,
-        collection: this.collection
+        collection: self.collection
       });
 
       });
