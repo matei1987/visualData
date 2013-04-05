@@ -66,13 +66,13 @@ Map.Controllers.App = (function() {
 
 
       this.collection = new Map.Collections.States();
-      this.collection.fetch();
       // Load scene
       appView = new Map.Views.App({
         el: renderer.domElement,
         collection: this.collection
       });
       
+      this.collection.fetch();
       $container.append(renderer.domElement);
     },
 
