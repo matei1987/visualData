@@ -68,6 +68,7 @@ Map.Controllers.App = (function() {
       this.collection = new Map.Collections.States();
       // Load scene
       this.collection.fetch();
+      console.log("after fetch:" + this.collection);
       appView = new Map.Views.App({
         el: renderer.domElement,
         collection: this.collection
