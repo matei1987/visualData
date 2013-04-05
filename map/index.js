@@ -18,26 +18,22 @@ Map.Controllers.App = (function() {
     projector: null,
 
     initialize: function() {
-
       _.bindAll( this, "animate", "render" );
 
       $container = $('#container');
-
       containerWidth = $container.width();
-
       containerHeight = $container.height();
+
        // Create scene
       this.scene = new THREE.Scene();
       
       // Create renderer
       renderer = new THREE.WebGLRenderer({antialias: true});
       renderer.setSize(containerWidth, containerHeight);
-
-      $container.append(renderer.domElement);
+      container.appendChild(renderer.domElement);
 
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
-
       this.pointLight.position.x = 10;
       this.pointLight.position.y = 50;
       this.pointLight.position.z = 1000;
@@ -54,7 +50,6 @@ Map.Controllers.App = (function() {
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
-     
 
       //Create Projector
       this.projector = new THREE.Projector(); 
@@ -63,9 +58,6 @@ Map.Controllers.App = (function() {
       this.controls = new THREE.TrackballControls(this.camera);
       this.controls.movementSpeed = 50;
       this.controls.rollSpeed = Math.PI / 12;
-
-      
-
 
       this.collection = new Map.Collections.States();
 
