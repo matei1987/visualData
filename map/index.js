@@ -66,17 +66,20 @@ Map.Controllers.App = (function() {
 
 
       this.collection = new Map.Collections.States();
-      this.collection.fetch();
+      this.collection.fetch().complete(function(){
+
+      appView = new Map.Views.App({
+        el: renderer.domElement,
+        collection: this.collection
+      });
+
+      });
       // Load scene
 
       // for (var i=0; i < stateObjects.length; i++){
       //   this.collection.add(stateObjects[i]);
       // };
 
-      appView = new Map.Views.App({
-        el: renderer.domElement,
-        collection: this.collection
-      });
       
       $container.append(renderer.domElement);
     },
@@ -129,7 +132,7 @@ Map.Collections.States = Backbone.Collection.extend({
 
 Map.Views.App = Backbone.View.extend({
   events: {
-    "mousemove": "hoverInfo"
+    // "mousemove": "hoverInfo"
   },
 
   initialize: function() {
