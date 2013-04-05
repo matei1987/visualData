@@ -32,7 +32,7 @@ Map.Controllers.App = (function() {
 
        // Create scene
       this.scene = new THREE.Scene();
-      
+
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
       this.pointLight.position.x = 10;
@@ -78,6 +78,8 @@ Map.Controllers.App = (function() {
 
       requestAnimationFrame(this.animate);
       this.controls.update();
+      this.pointLight.position.y = camera.position.y;
+      this.pointLight.position.z = camera.position.z;
       this.render();
     },
 
