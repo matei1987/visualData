@@ -47,7 +47,7 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
-      this.camera.position.set(0, -2000, 200);
+      this.camera.position.set(0, -2000, 2000);
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
@@ -201,6 +201,9 @@ Map.Views.State = Backbone.View.extend({
 
   render: function(){
     var shapeMesh = this.model.createShape('pensions');
+
+    shapeMesh.position.y = 0;
+    shapeMesh.position.x = 0;
 
     return shapeMesh;
   }
