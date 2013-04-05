@@ -97,20 +97,24 @@ Map.Controllers.App = (function() {
 
 Map.Models.State = Backbone.Model.extend({
 
-createShape: function (data) {
-    data = data || 'pensions';
+  initialize: function(){
+    _.bindAll(this, "createShape");
+  },
 
-    var amount = this.get('data.pensions.state') * 3 || 1;
-    var eGeom = new THREE.ExtrudeGeometry( this.get('shape'), {amount: amount, bevelEnabled: false } );
-    var material = new THREE.MeshLambertMaterial({
-      color: this.get('color'),
-      shading: THREE.SmoothShading
-    });
+  createShape: function (data) {
+      data = data || 'pensions';
 
-    var mesh = new THREE.Mesh( eGeom, material );
-    mesh.position.set(window.innerWidth/(1.5), window.innerHeight/(1.6), 2 * amount);
+      var amount = this.get('data.pensions.state') * 3 || 1;
+      var eGeom = new THREE.ExtrudeGeometry( this.get('shape'), {amount: amount, bevelEnabled: false } );
+      var material = new THREE.MeshLambertMaterial({
+        color: this.get('color'),
+        shading: THREE.SmoothShading
+      });
 
-    return mesh;
+      var mesh = new THREE.Mesh( eGeom, material );
+      mesh.position.set(window.innerWidth/(1.5), window.innerHeight/(1.6), 2 * amount);
+
+      return mesh;
   }
 });
 
