@@ -29,6 +29,11 @@ Map.Controllers.App = (function() {
        // Create scene
       this.scene = new THREE.Scene();
       
+      // Create renderer
+      renderer = new THREE.WebGLRenderer({antialias: true});
+      renderer.setSize(containerWidth, containerHeight);
+
+      $container.append(renderer.domElement);
 
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
@@ -36,7 +41,7 @@ Map.Controllers.App = (function() {
       this.pointLight.position.x = 10;
       this.pointLight.position.y = 50;
       this.pointLight.position.z = 1000;
-
+      this.scene.add(this.PointLight);
 
       // Create Camera
       this.camera = new THREE.PerspectiveCamera(
@@ -59,9 +64,6 @@ Map.Controllers.App = (function() {
       this.controls.movementSpeed = 50;
       this.controls.rollSpeed = Math.PI / 12;
 
-      // Create renderer
-      renderer = new THREE.WebGLRenderer({antialias: true});
-      renderer.setSize(containerWidth, containerHeight);
       
 
 
@@ -83,7 +85,6 @@ Map.Controllers.App = (function() {
       // };
 
       
-      $container.append(renderer.domElement);
     },
 
     animate: function() {
@@ -114,8 +115,8 @@ createShape: function (data) {
     state = this.attributes.shape;
     state.__proto__ = THREE.Shape.prototype;
     var eGeom = new THREE.ExtrudeGeometry( state, {amount: amount, bevelEnabled: false } );
-    var material = new THREE.MeshLambertMaterial({
-      color: 10571751.13940574, //this.attributes.color,
+    var material = new THREE.MeshSimpleMaterial({
+      color: this.attributes.color,
       shading: THREE.SmoothShading
     });
 
