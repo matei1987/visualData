@@ -11,6 +11,7 @@ Map.Controllers.App = (function() {
 
   return {
     camera: null,
+    collection: null,
     controls: null,
     scene: null,
     pointLight: null,
@@ -62,8 +63,15 @@ Map.Controllers.App = (function() {
       renderer = new THREE.WebGLRenderer({antialias: true});
       renderer.setSize(containerWidth, containerHeight);
       
+
+
+      this.collection = new Map.Collections.States();
+      this.collection.fetch();
       // Load scene
-      appView = new Map.Views.App({ el: renderer.domElement });
+      appView = new Map.Views.App({
+        el: renderer.domElement,
+        collection: this.collection
+      });
       
       $container.append(renderer.domElement);
     },
@@ -115,10 +123,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.collection = new Map.Collections.States();
-    this.collection.fetch();
 
-     _.bind("initMap", this );
     this.initMap();
   },
 
