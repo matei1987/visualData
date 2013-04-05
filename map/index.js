@@ -78,8 +78,8 @@ Map.Controllers.App = (function() {
 
       requestAnimationFrame(this.animate);
       this.controls.update();
-      this.pointLight.position.y = camera.position.y;
-      this.pointLight.position.z = camera.position.z;
+      this.pointLight.position.y = this.camera.position.y;
+      this.pointLight.position.z = this.camera.position.z;
       this.render();
     },
 
