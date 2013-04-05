@@ -32,13 +32,13 @@ Map.Controllers.App = (function() {
 
        // Create scene
       this.scene = new THREE.Scene();
-
+      
       // Create Light
-      var pointLight = new THREE.PointLight(0xFFFFFF);
-      pointLight.position.x = 10;
-      pointLight.position.y = 50;
-      pointLight.position.z = 1000;
-      this.scene.add(PointLight);
+      this.pointLight = new THREE.PointLight(0xFFFFFF);
+      this.pointLight.position.x = 10;
+      this.pointLight.position.y = 50;
+      this.pointLight.position.z = 1000;
+      this.scene.add(this.pointLight);
 
       // Create Camera
       this.camera = new THREE.PerspectiveCamera(
