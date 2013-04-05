@@ -118,7 +118,7 @@ Map.Views.App = Backbone.View.extend({
     this.collection = new Map.Collections.States();
     this.collection.fetch();
 
-     _.bindAll( this, "initMap" );
+     _.bind("initMap", this );
     this.initMap();
   },
 
