@@ -24,14 +24,21 @@ Map.Controllers.App = (function() {
       containerWidth = $container.width();
       containerHeight = $container.height();
 
-       // Create scene
-      this.scene = new THREE.Scene();
       
       // Create renderer
       renderer = new THREE.WebGLRenderer({antialias: true});
       renderer.setSize(containerWidth, containerHeight);
       container.appendChild(renderer.domElement);
 
+       // Create scene
+      this.scene = new THREE.Scene();
+      
+      // Create Light
+      this.pointLight = new THREE.PointLight(0xFFFFFF);
+      this.pointLight.position.x = 10;
+      this.pointLight.position.y = 50;
+      this.pointLight.position.z = 1000;
+      this.scene.add(this.PointLight);
 
       // Create Camera
       this.camera = new THREE.PerspectiveCamera(
@@ -65,12 +72,6 @@ Map.Controllers.App = (function() {
 
       });
       
-      // Create Light
-      this.pointLight = new THREE.PointLight(0xFFFFFF);
-      this.pointLight.position.x = 10;
-      this.pointLight.position.y = 50;
-      this.pointLight.position.z = 1000;
-      this.scene.add(this.PointLight);
     },
 
     animate: function() {
