@@ -205,7 +205,7 @@ Map.Views.State = Backbone.View.extend({
     shapeMesh.position.y = 0;
     shapeMesh.position.x = 0;
 
-    shapeMesh.scale.set(2,2,2);
+    shapeMesh.scale.set(3,3,3);
     return shapeMesh;
   }
 });
