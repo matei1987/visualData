@@ -99,7 +99,6 @@ createShape: function (data) {
 
 
     var amount = this.attributes.data.education.state * 6 || 1;
-    // var state = JSON.parse(this.attributes.shape);
     var state = {};
     state = this.attributes.shape;
     state.__proto__ = THREE.Shape.prototype;
@@ -205,6 +204,8 @@ Map.Views.State = Backbone.View.extend({
 
     shapeMesh.position.y = 0;
     shapeMesh.position.x = 0;
+
+    shapeMesh.scale.set(2,2,2);
     return shapeMesh;
   }
 });
