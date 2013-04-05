@@ -124,11 +124,10 @@ Map.Views.App = Backbone.View.extend({
 
   initMap: function() {
     _.each(this.collection.models, function(state){
-        console.log('im here');
         var mesh = new Map.Views.State({model: state}).render();
         console.log(mesh);
         Map.Controllers.App.scene.add( mesh );
-    });
+    }, this);
   },
 
   hoverInfo: function(e) {
