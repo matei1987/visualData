@@ -200,6 +200,7 @@ Map.Models.State = Backbone.Model.extend();
 Map.Views.State = Backbone.View.extend({
   initialize: function() {
     // this.model = new Map.Models.State();
+    _.bindAll(this, 'render');
   },
 
   render: function(){
