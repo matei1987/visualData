@@ -115,7 +115,7 @@ createShape: function (data) {
     state = this.attributes.shape;
     state.__proto__ = THREE.Shape.prototype;
     var eGeom = new THREE.ExtrudeGeometry( state, {amount: amount, bevelEnabled: false } );
-    var material = new THREE.MeshLambertMaterial({
+    var material = new THREE.MeshNormalMaterial({
       color: this.attributes.color,
       shading: THREE.SmoothShading
     });
