@@ -202,10 +202,6 @@ Map.Views.State = Backbone.View.extend({
   render: function(){
     var shapeMesh = this.model.createShape('pensions');
 
-    shapeMesh.position.y = 0;
-    shapeMesh.position.x = 0;
-
-    shapeMesh.scale.set(3,3,3);
     return shapeMesh;
   }
 });
