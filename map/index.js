@@ -136,6 +136,7 @@ Map.Views.App = Backbone.View.extend({
   initMap: function() {
     _.each(this.collection.models, function(state){
         var mesh = new Map.Views.State({model: state}).render();
+        mesh.id = state.get('id');
         Map.Controllers.App.scene.add( mesh );
     }, this);
   },
@@ -211,7 +212,6 @@ Map.Views.State = Backbone.View.extend({
 
     shapeMesh.position.y = 0;
     shapeMesh.position.x = 0;
-
     return shapeMesh;
   }
 });
