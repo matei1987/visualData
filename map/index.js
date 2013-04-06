@@ -173,7 +173,7 @@ Map.Views.App = Backbone.View.extend({
       obj.material.color.setRGB( 1, 0, 0);
 
       var stateModel = this.collection.where({'id': obj.id})[0];
-      var hoverData = stateModel.get('data');
+      var hoverData = stateModel.get('data').education;
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
      
      tip = $("#tip");
