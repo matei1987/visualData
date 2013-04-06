@@ -122,7 +122,6 @@ Map.Collections.States = Backbone.Collection.extend({
 
 
 Map.Views.App = Backbone.View.extend({
-  el: '#container',
   
   events: {
     "mousemove": "hoverInfo"
