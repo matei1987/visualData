@@ -151,7 +151,6 @@ Map.Views.App = Backbone.View.extend({
     mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1,
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
-    $tip.hide();
 
     var states = Map.Controllers.App.scene.__objects;
 
@@ -173,12 +172,12 @@ Map.Views.App = Backbone.View.extend({
       obj = intersection.object;
       obj.material.color.setRGB( 1, 0, 0);
 
-
       var hoverData = this.collection.where({'id': 1})[0].data;
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
      
      tip = $("#tip");
-
+     tip.hide();
+     
       tip.css({
         "top":e.clientY,
         "left":e.clientX
