@@ -162,6 +162,7 @@ Map.Views.App = Backbone.View.extend({
       state.material.color.setHex(stateModel.color);
     }
 
+    var projector = Map.Controllers.App.projector;
     var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
     intersects = raycaster.intersectObjects(states );
 
