@@ -163,7 +163,7 @@ Map.Views.App = Backbone.View.extend({
     }
 
     var projector = Map.Controllers.App.projector;
-    var raycaster = projector.pickingRay(mouseVector.clone(), camera ),
+    var raycaster = projector.pickingRay(mouseVector, camera ),
     intersects = raycaster.intersectObjects(states );
 
     if(intersects.length){
