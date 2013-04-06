@@ -154,11 +154,12 @@ Map.Views.App = Backbone.View.extend({
 
     $tip.hide();
 
-    var states = this.collection.models;
+    var states = Map.Controllers.App.scene.__objects;
 
     for (var i = 0, len = states.length; i < len; i++) {
       var state = states[i];
-      state.material.color.setHex(colorArray[i]);
+      stateModel = this.collection.where({'id': state.id });
+      state.material.color.setHex(stateModel.color);
     }
 
     var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
