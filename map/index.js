@@ -123,7 +123,7 @@ Map.Collections.States = Backbone.Collection.extend({
 
 Map.Views.App = Backbone.View.extend({
   events: {
-    // "mousemove": "hoverInfo"
+    "mousemove": "hoverInfo"
   },
 
   initialize: function() {
@@ -168,8 +168,8 @@ Map.Views.App = Backbone.View.extend({
       obj.material.color.setRGB( 1, 0, 0);
 
 
-      var hoverData = this.collection.where({'id': 1});
-      dataJSON[$(".active").data("area")][statecode[obj.name]];
+      var hoverData = this.collection.where({'id': 1}).data;
+      // dataJSON[$(".active").data("area")][statecode[obj.name]];
 
       $tip.css({
         "top":e.clientY,
