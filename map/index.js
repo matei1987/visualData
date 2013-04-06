@@ -109,7 +109,7 @@ createShape: function (data) {
     });
 
     var mesh = new THREE.Mesh( eGeom, material );
-    mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), -amount);
+    // mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), -amount);
 
     return mesh;
   }
@@ -210,8 +210,8 @@ Map.Views.State = Backbone.View.extend({
   render: function(){
     var shapeMesh = this.model.createShape('pensions');
 
-    shapeMesh.position.y = 0;
-    shapeMesh.position.x = 0;
+    // shapeMesh.position.y = 0;
+    // shapeMesh.position.x = 0;
     return shapeMesh;
   }
 });
