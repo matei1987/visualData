@@ -148,7 +148,7 @@ Map.Views.App = Backbone.View.extend({
     offsetY = position.top,
     offsetX = position.left;
 
-    var mouseVector = {};
+    var mouseVector = new THREE.Vector3();
     mouseVector.x = 2 * ((e.clientX - offsetX ) / containerWidth) - 1,
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
@@ -164,7 +164,7 @@ Map.Views.App = Backbone.View.extend({
 
     var camera = Map.Controllers.App.camera;
     var projector = Map.Controllers.App.projector;
-    var raycaster = projector.pickingRay(mouseVector, camera ),
+    var raycaster = projector.pickingRay(mouseVector.clone(), camera ),
     intersects = raycaster.intersectObjects(states );
 
     if(intersects.length){
