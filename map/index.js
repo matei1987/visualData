@@ -140,7 +140,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   hoverInfo: function(e) {
-    console.log('wtf');
+    console.log('wtf1');
 
     var $tip = $("#tip"),
     position = $('canvas').position(),
@@ -153,15 +153,15 @@ Map.Views.App = Backbone.View.extend({
 
     $tip.hide();
 
-    var states = this.collection;
+    var states = this.collection.models;
 
-    for (var i = 0, len = states.children.length; i < len; i++) {
-      var state = states.children[i];
+    for (var i = 0, len = states.length; i < len; i++) {
+      var state = states[i];
       state.material.color.setHex(colorArray[i]);
     }
 
     var raycaster = projecter.pickingRay(mouseVector.clone(), camera ),
-    intersects = raycaster.intersectObjects(states.children );
+    intersects = raycaster.intersectObjects(states );
 
     if(intersects.length){
       var intersection = intersects[0];
