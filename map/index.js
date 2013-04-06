@@ -187,7 +187,7 @@ Map.Views.App = Backbone.View.extend({
       $("#title").text(stateModel.get('name'));
       $("#local").text("Local: "+hoverData.local);
       $("#state").text("State: "+hoverData.state);
-      $("#total").text("Total: "+ (  hoverData.state + hoverData.local - 0));
+      $("#total").text("Total: "+ (  (hoverData.state + hoverData.local) - 0));
 
       tip.show();
     }
