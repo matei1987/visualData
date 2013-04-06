@@ -128,6 +128,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   initialize: function() {
+    _.bindAll( this, "initMap", "hoverInfo" );
 
     this.initMap();
   },
@@ -187,7 +188,7 @@ Map.Views.App = Backbone.View.extend({
 
     // TODO: create hover template.
     // Possible Option: Create a view just for the hover box and pass this.collection.models[x].data as the model..
-    // Hoverinfo should cast ray grab the id attribute from the object and render the template with the correct model
+    // hoverinfo should cast ray grab the id attribute from the object and render the template with the correct model
     // Should set display to none in the beginning of the function
   }
 
