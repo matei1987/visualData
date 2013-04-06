@@ -166,6 +166,9 @@ Map.Views.App = Backbone.View.extend({
     var raycaster = projector.pickingRay(mouseVector.clone(), camera ),
     intersects = raycaster.intersectObjects(states );
 
+   tip = $("#tip");
+   tip.hide();
+
     if(intersects.length){
       var intersection = intersects[0];
       obj = intersection.object;
@@ -175,9 +178,6 @@ Map.Views.App = Backbone.View.extend({
       var hoverData = stateModel.get('data').education;
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
      
-     tip = $("#tip");
-     tip.hide();
-
       tip.css({
         "top":e.clientY,
         "left":e.clientX
