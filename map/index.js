@@ -159,7 +159,7 @@ Map.Views.App = Backbone.View.extend({
     for (var i = 0, len = states.length; i < len; i++) {
       var state = states[i];
       stateModel = this.collection.where({'id': state.id });
-      state.material.color.setHex(stateModel.color);
+      state.material.color.setHex(stateModel.get('color'));
     }
 
     var camera = Map.Controllers.App.camera;
