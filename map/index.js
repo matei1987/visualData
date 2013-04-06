@@ -172,18 +172,19 @@ Map.Views.App = Backbone.View.extend({
       obj = intersection.object;
       obj.material.color.setRGB( 1, 0, 0);
 
-      var hoverData = this.collection.where({'id': 1})[0].data;
+      var stateModel = this.collection.where({'id': 1})[0];
+      var hoverData = stateModel.get('data');
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
      
      tip = $("#tip");
      tip.hide();
-     
+
       tip.css({
         "top":e.clientY,
         "left":e.clientX
       });
 
-      $("#title").text(statecode[obj.name]);
+      $("#title").text(stateModel.get('name'));
       $("#local").text("Local: "+hoverData["State Spending"]+"B");
       $("#state").text("State: "+hoverData["Local Spending"]+"B");
       $("#total").text("Total: "+hoverData["State and Local Spending"]+"B");
