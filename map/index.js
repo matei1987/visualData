@@ -175,7 +175,7 @@ Map.Views.App = Backbone.View.extend({
       obj.material.color.setRGB( 1, 0, 0);
 
 
-      var hoverData = this.collection.where({'id': 1}).data;
+      var hoverData = this.collection.where({'id': 1})[0].data;
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
 
       $tip.css({
