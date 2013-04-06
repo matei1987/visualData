@@ -143,8 +143,7 @@ Map.Views.App = Backbone.View.extend({
   hoverInfo: function(e) {
     console.log('wtf1');
 
-    var $tip = $("#tip"),
-    position = $('canvas').position(),
+    var position = $('canvas').position(),
     offsetY = position.top,
     offsetX = position.left;
 
@@ -177,8 +176,10 @@ Map.Views.App = Backbone.View.extend({
 
       var hoverData = this.collection.where({'id': 1})[0].data;
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
+     
+     tip = $("#tip");
 
-      $tip.css({
+      tip.css({
         "top":e.clientY,
         "left":e.clientX
       });
@@ -188,7 +189,7 @@ Map.Views.App = Backbone.View.extend({
       $("#state").text("State: "+hoverData["Local Spending"]+"B");
       $("#total").text("Total: "+hoverData["State and Local Spending"]+"B");
 
-      $tip.show();
+      tip.show();
     }
 
     // TODO: create hover template.
