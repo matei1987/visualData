@@ -47,7 +47,7 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
-      this.camera.position.set(100, 100, 100);
+      this.camera.position.set(100, 100, 1000);
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
