@@ -158,11 +158,8 @@ Map.Views.App = Backbone.View.extend({
 
     for (var i = 0, len = states.length; i < len; i++) {
       var state = states[i];
-      stateModel = this.collection.where({'id': state.id });
-      console.log(this.collection);
-      console.log(state.id);
-      console.log(stateModel);
-      state.material.color.setHex(stateModel.attributes.color);
+      stateModel = this.collection.where({'id': state.id })[0];
+      state.material.color.setHex(stateModel.get('color'));
     }
 
     var camera = Map.Controllers.App.camera;
