@@ -139,7 +139,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   hoverInfo: function(e) {
-
+    console.log('hello');
 
     var $tip = $("#tip"),
     position = $('canvas').position(),
