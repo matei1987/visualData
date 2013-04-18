@@ -2,12 +2,17 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylehsheet', href='http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css')
     
+    link(rel='stylehsheet', href='http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/application.css')
+
     script(type='text/javascript', src='javascripts/jquery/1.9.1.js')
     script(type='text/javascript', src='javascripts/three.js/three.js')
     script(type='text/javascript', src='javascripts/three.js/TrackballControls.js')
+
+    script(type='text/javascript', src='javascripts/underscore.js')
+    script(type='text/javascript', src='javascripts/backbone.js')
+    script(type='text/javascript', src='javascripts/backbone-deep-model.js')
     script(type='text/javascript', src='javascripts/application.js')
   body
     block content
