@@ -1,0 +1,15 @@
+{
+  "name": "visualdata",
+  "version": "0.0.1",
+  "main": "public/stylesheets/style.css",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "socket.io-client": "*",
+    "underscore": "*",
+    "threejs": "*"
+  }
+}
