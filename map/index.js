@@ -38,6 +38,7 @@ camera = new THREE.PerspectiveCamera(
     .08,           // Near plane
     100000           // Far plane
   );
+
   camera.position.set(0, -2000, 2000);
   camera.lookAt(scene.position);
   
@@ -409,6 +410,28 @@ function transformSVGPath(pathStr) {
   
   return path;
 }
+
+$(document).bind('keydown', function(e){
+      if (e.keyCode == 82){
+        camera = new THREE.PerspectiveCamera(
+          35,             // Field of view
+          containerWidth / containerHeight, // Aspect ratio
+          .08,           // Near plane
+          100000           // Far plane
+        );
+
+        camera.position.set(0, -2000, 2000);
+        camera.lookAt(scene.position);
+        
+        scene.add(camera);
+
+        controls = new THREE.TrackballControls(camera);
+  controls.movementSpeed = 50;
+  controls.rollSpeed = Math.PI / 12;
+
+      }
+
+});
 
 // On Page Ready
 $(document).ready(function() {
