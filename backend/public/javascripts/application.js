@@ -14,6 +14,7 @@ window.Map = {
 
 Map.Controllers.App = (function() {
   var renderer,
+    filterView,
     appView; 
 
   return {
@@ -21,6 +22,7 @@ Map.Controllers.App = (function() {
     collection: null,
     controls: null,
     scene: null,
+    states: null,
     pointLight: null,
     projector: null,
 
@@ -37,8 +39,7 @@ Map.Controllers.App = (function() {
       container.appendChild(renderer.domElement);
 
        // Create scene
-      this.scene = new THREE.Scene();
-
+       this.scene = new THREE.Scene();
       // Create Light
       this.pointLight = new THREE.PointLight(0xFFFFFF);
       this.pointLight.position.x = 10;
@@ -53,10 +54,12 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
-      this.camera.position.set(270, 296, -900);
+      this.camera.position.set(0, 296, -900);
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
+
+
 
       //Create Projector
       this.projector = new THREE.Projector(); 
@@ -70,6 +73,11 @@ Map.Controllers.App = (function() {
 
       var self = this;
       this.collection.fetch().complete(function(){
+
+        filterView = new Map.Views.Filter({
+          el: $("#filter"),
+          collection: self.collection
+        });
 
         appView = new Map.Views.App({
           el: renderer.domElement,
@@ -99,9 +107,9 @@ Map.Controllers.App = (function() {
 
 Map.Models.State = Backbone.Model.extend({
   createShape: function (data) {
-      data = data || 'pensions';
+      data = $('.active').data('area');
 
-      var amount = this.attributes.data.education.state * 6 || 1;
+      var amount = this.attributes.data[data].state * 6 || 1;
       var state = {};
       state = this.attributes.shape;
       state.__proto__ = THREE.Shape.prototype;
@@ -134,16 +142,21 @@ Map.Views.App = Backbone.View.extend({
   },
 
   initMap: function() {
+
+    Map.Controllers.App.states = new THREE.Object3D();  
+    var states = Map.Controllers.App.states;
+    states.position.y = 0;
+    states.position.x = 0;
+    Map.Controllers.App.scene.add(states);
+
     _.each(this.collection.models, function(state){
         var mesh = new Map.Views.State({model: state}).render();
         mesh.id = state.get('id');
-        Map.Controllers.App.scene.add( mesh );
+       Map.Controllers.App.states.add(mesh);
     }, this);
   },
 
   hoverInfo: function(e) {
-    console.log('wtf1');
-
     var position = $('canvas').position(),
     offsetY = position.top,
     offsetX = position.left;
@@ -198,6 +211,35 @@ Map.Views.App = Backbone.View.extend({
     // Should set display to none in the beginning of the function
   }
 
+});
+
+Map.Views.Filter = Backbone.View.extend({
+  events: {
+    "click a": "changeHeight"
+  },
+
+  initialize: function() {
+    _.bindAll( this, "changeHeight" );
+  },
+
+  changeActive: function() {
+
+  },
+
+  changeHeight: function(e) {
+    $('.active').removeClass('active');
+
+    $(e.currentTarget).addClass('active');
+    var scene = Map.Controllers.App.scene;
+    var obj = scene.children[ 2 ];
+        scene.remove(obj);
+
+    _.each(this.collection.models, function(state){
+        var mesh = new Map.Views.State({model: state}).render();
+        mesh.id = state.get('id');
+        Map.Controllers.App.scene.add( mesh );
+    }, this);
+  }
 });
 
 Map.Models.State = Backbone.Model.extend();
