@@ -64,8 +64,8 @@ Map.Controllers.App = (function() {
 
       //Create States
       this.states = new THREE.Object3D();
-      this.states.position.x = 0;
-      this.states.position.y = 0;
+      this.states.position.x = 500;
+      this.states.position.y = 500;
       this.scene.add(this.states);
 
       // Create Controls
@@ -151,8 +151,6 @@ Map.Views.App = Backbone.View.extend({
   },
 
   hoverInfo: function(e) {
-    console.log('wtf1');
-
     var position = $('canvas').position(),
     offsetY = position.top,
     offsetX = position.left;
@@ -162,7 +160,7 @@ Map.Views.App = Backbone.View.extend({
     mouseVector.y = 1 - 2 * ( (e.clientY - offsetY)/ containerHeight );
 
 
-    var states = Map.Controllers.App.scene.__objects;
+    var states = Map.Controllers.App.states.children;
 
     for (var i = 0, len = states.length; i < len; i++) {
       var state = states[i];

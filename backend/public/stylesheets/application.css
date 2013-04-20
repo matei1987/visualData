@@ -18,7 +18,7 @@ html[xmlns] .clearfix {
 }
 #container {
   top: 0;
-  height: 50%;
+  height: 100%;
   width: 100%;
 }
 body {
