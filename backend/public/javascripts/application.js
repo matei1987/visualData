@@ -53,7 +53,9 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
-      this.camera.position.set(270, 296, -900);
+      this.camera.rotation.set(0,0,0);
+      this.camera.position.set( 0, 0, -2000);
+      
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
@@ -112,7 +114,8 @@ Map.Models.State = Backbone.Model.extend({
       });
 
       var mesh = new THREE.Mesh( eGeom, material );
-      mesh.position.set(-window.innerWidth/(1.5), window.innerHeight/(1.6), -amount);
+      mesh.position.set( -300, 0, -amount);
+      mesh.rotation.set( 0 , 0 , -3.2 );
 
       return mesh;
     }
@@ -142,7 +145,7 @@ Map.Views.App = Backbone.View.extend({
   },
 
   hoverInfo: function(e) {
-    console.log('wtf1');
+    //console.log('wtf1');
 
     var position = $('canvas').position(),
     offsetY = position.top,
