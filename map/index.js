@@ -95,7 +95,7 @@ Map.Controllers.App = (function() {
 Map.Models.State = Backbone.Model.extend({
 
 createShape: function (data) {
-    data = data || 'pensions';
+  $('.active').data()
 
 
     var amount = this.attributes.data.education.state * 6 || 1;
