@@ -20,6 +20,7 @@ Map.Controllers.App = (function() {
     camera: null,
     collection: null,
     controls: null,
+    states: null,
     scene: null,
     pointLight: null,
     projector: null,
@@ -60,6 +61,12 @@ Map.Controllers.App = (function() {
 
       //Create Projector
       this.projector = new THREE.Projector(); 
+
+      //Create States
+      this.states = new THREE.Object3D();
+      this.states.position.x = 0;
+      this.states.position.y = 0;
+      this.scene.add(this.states);
 
       // Create Controls
       this.controls = new THREE.TrackballControls(this.camera);
@@ -139,7 +146,7 @@ Map.Views.App = Backbone.View.extend({
     _.each(this.collection.models, function(state){
         var mesh = new Map.Views.State({model: state}).render();
         mesh.id = state.get('id');
-        Map.Controllers.App.scene.add( mesh );
+        Map.Controllers.App.states.add( mesh );
     }, this);
   },
 
