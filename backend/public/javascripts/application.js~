@@ -54,9 +54,13 @@ Map.Controllers.App = (function() {
           .08,           // Near plane
           100000           // Far plane
         );
+<<<<<<< HEAD
+      this.camera.position.set(0, 296, -900);
+=======
       this.camera.rotation.set(0,0,0);
       this.camera.position.set( -300, -500, -2000);
       
+>>>>>>> 0bc857f35a263a85f045fdb97ca056f3d45ce5d1
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
@@ -160,6 +164,11 @@ Map.Views.App = Backbone.View.extend({
   },
 
   hoverInfo: function(e) {
+<<<<<<< HEAD
+=======
+    //console.log('wtf1');
+
+>>>>>>> 0bc857f35a263a85f045fdb97ca056f3d45ce5d1
     var position = $('canvas').position(),
     offsetY = position.top,
     offsetX = position.left;
