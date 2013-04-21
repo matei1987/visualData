@@ -14,7 +14,8 @@ window.Map = {
 
 Map.Controllers.App = (function() {
   var renderer,
-    appView; 
+    appView,
+    filterView;
 
   return {
     camera: null,
@@ -54,7 +55,7 @@ Map.Controllers.App = (function() {
           100000           // Far plane
         );
       this.camera.rotation.set(0,0,0);
-      this.camera.position.set(-300, -500, -2000);
+      this.camera.position.set(-300, -500, -1500);
       this.camera.lookAt(this.scene.position);
      
       this.scene.add(this.camera);
@@ -64,8 +65,8 @@ Map.Controllers.App = (function() {
 
       //Create States
       this.states = new THREE.Object3D();
-      this.states.position.x = 500;
-      this.states.position.y = 500;
+      this.states.position.x = window.innerWidth / 2.5;
+      this.states.position.y = window.innerHeight / 2.5;
       this.scene.add(this.states);
 
       // Create Controls
@@ -78,7 +79,13 @@ Map.Controllers.App = (function() {
       var self = this;
       this.collection.fetch().complete(function(){
 
+        filterView = new Map.Views.Filter({
+          el: '#filter',
+          collection: self.collection
+
+        });
         appView = new Map.Views.App({
+          
           el: renderer.domElement,
           collection: self.collection
         });
@@ -106,9 +113,9 @@ Map.Controllers.App = (function() {
 
 Map.Models.State = Backbone.Model.extend({
   createShape: function (data) {
-      data = data || 'pensions';
+      data = $('.active').data('area');
 
-      var amount = this.attributes.data.education.state * 6 || 1;
+      var amount = this.attributes.data[data].state * 6 || 1;
       var state = {};
       state = this.attributes.shape;
       state.__proto__ = THREE.Shape.prototype;
@@ -181,7 +188,11 @@ Map.Views.App = Backbone.View.extend({
       obj.material.color.setRGB( 1, 0, 0);
 
       var stateModel = this.collection.where({'id': obj.id})[0];
-      var hoverData = stateModel.get('data').education;
+
+      //TODO: decouple this... make data a public variable in the a backbone object.
+      var data = $('.active').data('area');
+
+      var hoverData = stateModel.get('data')[data];
       // dataJSON[$(".active").data("area")][statecode[obj.name]];
      
      tip = $("#tip");
@@ -220,5 +231,46 @@ Map.Views.State = Backbone.View.extend({
     shapeMesh.position.y = 0;
     shapeMesh.position.x = 0;
     return shapeMesh;
+  },
+
+  deleteMap: function(){
+    var scene = Map.Controllers.App.scene;
+    scene.remove(scene.children[2]);
+  }
+});
+
+Map.Views.Filter = Backbone.View.extend({
+  events: {
+    "click a": "changeActive"
+  },
+
+  initialize: function() {
+    // this.model = new Map.Models.State();
+  },
+
+  changeActive: function(e){
+    $('.active').removeClass('active');
+    $(e.currentTarget).addClass('active');
+
+
+    this.deleteMap();
+    this.renderMap();
+  },
+
+  deleteMap: function(){
+    var states = Map.Controllers.App.states,
+    statesChildren = states.children;
+
+    for(x = statesChildren.length-1; x >= 0; x--){
+      states.remove(states.children[x]);
+    };
+  },
+
+  renderMap: function(){
+    _.each(this.collection.models, function(state){
+        var mesh = new Map.Views.State({model: state}).render();
+        mesh.id = state.get('id');
+        Map.Controllers.App.states.add( mesh );
+    }, this);
   }
 });
